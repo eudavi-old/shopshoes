@@ -1,0 +1,2 @@
+class Banco < ApplicationRecord
+end

@@ -1,0 +1,22 @@
+<%= form_with(model: dado_bancario, local: true) do |form| %>
+  <% if dado_bancario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dado_bancario.errors.count, "error") %> prohibited this dado_bancario from being saved:</h2>
+
+      <ul>
+      <% dado_bancario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :conta %>
+    <%= form.text_field :conta, id: :dado_bancario_conta %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

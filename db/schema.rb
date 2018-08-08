@@ -10,13 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180807182748) do
+ActiveRecord::Schema.define(version: 20180808001009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "agencia", force: :cascade do |t|
+    t.string "nome_agencia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bancos", force: :cascade do |t|
+    t.string "nome_banco"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cargos", force: :cascade do |t|
     t.string "cargo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dado_bancarios", force: :cascade do |t|
+    t.string "conta"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "funcionarios", force: :cascade do |t|
+    t.integer "cpf"
+    t.string "nome"
+    t.float "salario"
+    t.date "data_nasc"
+    t.string "login"
+    t.string "senha"
+    t.integer "cep"
+    t.string "logradouro"
+    t.integer "num_logradouro"
+    t.string "bairro"
+    t.string "cidade"
+    t.string "uf"
+    t.string "pais"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "setors", force: :cascade do |t|
+    t.string "setor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,2 @@
+class Setor < ApplicationRecord
+end

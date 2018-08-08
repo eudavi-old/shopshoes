@@ -1,0 +1,22 @@
+<%= form_with(model: setor, local: true) do |form| %>
+  <% if setor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(setor.errors.count, "error") %> prohibited this setor from being saved:</h2>
+
+      <ul>
+      <% setor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :setor %>
+    <%= form.text_field :setor, id: :setor_setor %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
