@@ -76,6 +76,11 @@
     <%= form.text_field :pais, id: :funcionario_pais %>
   </div>
 
+  <div class="field">
+    <%= form.label :cargo %>
+    <%= form.collection_select :cargos, Cargo.order(:id), :id, :cargo, class: 'browser-default'%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

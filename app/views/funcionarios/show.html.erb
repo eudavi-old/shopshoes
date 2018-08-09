@@ -65,5 +65,12 @@
   <%= @funcionario.pais %>
 </p>
 
+<p>
+  <strong>Cargo:</strong>
+  <% @funcionario.cargos.each do |cargo| %>
+    <%= cargo.cargo %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_funcionario_path(@funcionario) %> |
 <%= link_to 'Back', funcionarios_path %>

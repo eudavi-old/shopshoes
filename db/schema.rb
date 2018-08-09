@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180808001009) do
+ActiveRecord::Schema.define(version: 20180809191537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "agencia", force: :cascade do |t|
+  create_table "agencias", force: :cascade do |t|
     t.string "nome_agencia"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -33,7 +33,14 @@ ActiveRecord::Schema.define(version: 20180808001009) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "dado_bancarios", force: :cascade do |t|
+  create_table "cargos_funcionarios", force: :cascade do |t|
+    t.bigint "cargo_id"
+    t.bigint "funcionario_id"
+    t.index ["cargo_id"], name: "index_cargos_funcionarios_on_cargo_id"
+    t.index ["funcionario_id"], name: "index_cargos_funcionarios_on_funcionario_id"
+  end
+
+  create_table "dados_bancarios", force: :cascade do |t|
     t.string "conta"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

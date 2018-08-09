@@ -25,6 +25,7 @@ class FuncionariosController < ApplicationController
   # POST /funcionarios.json
   def create
     @funcionario = Funcionario.new(funcionario_params)
+    @funcionario.cargos << Cargo.find(params[:funcionario][:cargos])
 
     respond_to do |format|
       if @funcionario.save

@@ -1,6 +1,6 @@
 class CreateFuncionarios < ActiveRecord::Migration[5.1]
   def change
-    create_table :funcionario do |t|
+    create_table :funcionarios do |t|
       t.integer :cpf
       t.string :nome
       t.float :salario
