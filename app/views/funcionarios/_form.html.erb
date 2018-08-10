@@ -81,6 +81,32 @@
     <%= form.collection_select :cargos, Cargo.order(:id), :id, :cargo, class: 'browser-default'%>
   </div>
 
+  <div class="field">
+    <%= form.label :setor %>
+    <%= form.collection_select :setors, Setor.order(:id), :id, :setor, class: 'browser-default'%>
+  </div>
+
+  <h4> Email </h4>
+
+  <div id="emails">
+    <%= form.fields_for :emails do |email| %>
+      <!-- COMENTÁRIO:
+        é uma exigencia também que os campos do seu nested esteja numa partial "nome_do_seu_nested_no_singular_fields"
+        no nosso caso _experience_fields.html.erb
+      -->
+      <%= render 'email_fields', f: email %>
+    <% end %>
+ 
+    <!-- COMENTÁRIO:
+      O link para adicionar dinamicamente os fields deve estar dentro de uma div .links
+    -->
+    <div class="links">
+      <!-- COMENTÁRIO: O link_to_add_association é um helper provido pela gem -->
+      <%= link_to_add_association 'adicionar email', form, :emails %>
+      <br><br>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

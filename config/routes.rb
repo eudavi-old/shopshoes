@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :emails
   resources :funcionarios
   resources :dado_bancarios
   resources :agencia

@@ -15,6 +15,7 @@ class FuncionariosController < ApplicationController
   # GET /funcionarios/new
   def new
     @funcionario = Funcionario.new
+    @email = @funcionario.emails.build
   end
 
   # GET /funcionarios/1/edit
@@ -26,6 +27,7 @@ class FuncionariosController < ApplicationController
   def create
     @funcionario = Funcionario.new(funcionario_params)
     @funcionario.cargos << Cargo.find(params[:funcionario][:cargos])
+    @funcionario.setors << Setor.find(params[:funcionario][:setors])
 
     respond_to do |format|
       if @funcionario.save
@@ -70,6 +72,7 @@ class FuncionariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def funcionario_params
-      params.require(:funcionario).permit(:cpf, :nome, :salario, :data_nasc, :login, :senha, :cep, :logradouro, :num_logradouro, :bairro, :cidade, :uf, :pais)
+      params.require(:funcionario).permit(:cpf, :nome, :salario, :data_nasc, :login, :senha, :cep, 
+        :logradouro, :num_logradouro, :bairro, :cidade, :uf, :pais, emails_attributes: [:email])
     end
 end
