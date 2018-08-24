@@ -2,7 +2,6 @@
   <% if funcionario.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(funcionario.errors.count, "error") %> prohibited this funcionario from being saved:</h2>
-
       <ul>
       <% funcionario.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,7 +10,10 @@
     </div>
   <% end %>
 
+<section class="section">
   <div class="container card">
+    <h1>Novo Funcionário</h1>
+
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -27,6 +29,7 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   </div>
+</section>
   
   <div class="field">
   </div>

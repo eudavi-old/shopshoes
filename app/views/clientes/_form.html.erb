@@ -1,0 +1,82 @@
+<%= form_with(model: cliente, local: true) do |form| %>
+  <% if cliente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+
+      <ul>
+      <% cliente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf, id: :cliente_cpf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :cliente_nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_nasc %>
+    <%= form.date_select :data_nasc, id: :cliente_data_nasc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :login %>
+    <%= form.text_field :login, id: :cliente_login %>
+  </div>
+
+  <div class="field">
+    <%= form.label :senha %>
+    <%= form.text_field :senha, id: :cliente_senha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cep %>
+    <%= form.text_field :cep, id: :cliente_cep %>
+  </div>
+
+  <div class="field">
+    <%= form.label :logradouro %>
+    <%= form.text_field :logradouro, id: :cliente_logradouro %>
+  </div>
+
+  <div class="field">
+    <%= form.label :debito %>
+    <%= form.text_field :debito, id: :cliente_debito %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_logradouro %>
+    <%= form.number_field :num_logradouro, id: :cliente_num_logradouro %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bairro %>
+    <%= form.text_field :bairro, id: :cliente_bairro %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cidade %>
+    <%= form.text_field :cidade, id: :cliente_cidade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uf %>
+    <%= form.text_field :uf, id: :cliente_uf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pais %>
+    <%= form.text_field :pais, id: :cliente_pais %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
