@@ -12,55 +12,185 @@
 
 <br>
 
-<section class="section">
-  <div class="container card">
-    <h1>Novo Funcionário</h1>
 
-    <div class="form-group">
-      <label for="exampleInputEmail1">Nome</label>
-      <%= form.text_field :nome, class: 'form-control', placeholder: "Insira seu nome"%>
+
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="card card-login">
+          <form class="form" method="" action="">
+            <div class="card-header card-header-primary text-center">
+              <h4 class="card-title">CADASTRO DE FUNCIONÁRIO</h4>
+            </div>
+            <div class="card-body">
+             <span class="bmd-form-group">
+               <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">person</i>
+                  </span>
+                </div>
+                <%= form.text_field :login, id: :funcionario_login, class: 'form-control', placeholder: 'Login' %>
+              </div></span>
+
+
+              <%= form.fields_for :emails do |email| %>
+              <%= render 'email_fields', f: email %>
+              <% end %>
+
+
+              <div class="links">
+                <%= link_to_add_association "Adicionar Email", form, :emails, class: "btn" %>
+              </div>
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+
+                <%= form.password_field :senha, autocomplete: "current-password" , class: 'form-control', placeholder: 'Senha...'%>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">accessibility</i>
+                  </span>
+                </div>
+                <%= form.text_field :nome, id: :funcionario_nome, class: 'form-control', placeholder: 'Nome do Funcionario' %>
+              </div></span>
+
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">money</i>
+                  </span>
+                </div>
+                <%= form.number_field :salario, id: :funcionario_salario, class: 'form-control', placeholder: 'Salario do Funcionario' %>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+
+                    <i class="material-icons">date_range</i>
+
+                  </span>
+                </div>
+                <%= form.text_field :data_nasc, id: :func_data_nasc, class: 'form-control datetimepicker', placeholder: 'Data de Nascimento' %>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">navigation</i>
+                  </span>
+                </div>
+                <%= form.text_field :logradouro, id: :funcionario_logradouro, class: 'form-control', placeholder: 'LOGRADOURO' %>
+
+                <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">filter_9</i>
+                </span>
+              </div>
+
+              <%= form.text_field :num_logradouro, id: :funcionario_logradouro_num, class: 'form-control', placeholder: 'NUMERO LOGRADOURO' %>
+                
+                
+              </div></span>
+
+
+              <span class="bmd-form-group"><div class="input-group">
+
+               <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">location_city</i>
+                </span>
+              </div>
+
+              <%= form.text_field :cidade, id: :funcionario_cidade, class: 'form-control', placeholder: 'CIDADE' %>
+
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">home</i>
+                </span>
+              </div>
+              
+              <%= form.text_field :bairro, id: :funcionario_bairro, class: 'form-control', placeholder: 'BAIRRO' %>
+              
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">my_location</i>
+                  </span>
+                </div>
+                <%= form.text_field :cep, id: :funcionario_cep, class: 'form-control', placeholder: 'CEP' %>
+
+            </div></span>
+
+             <span class="bmd-form-group"><div class="input-group">
+
+              <div class="input-group-prepend">
+
+                <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">location_on</i>
+                </span>
+              </div>
+
+              <%= form.text_field :pais, id: :funcionario_logradouro_num, class: 'form-control', placeholder: 'País' %>
+                
+                  <span class="input-group-text">
+                    <i class="material-icons">location_on</i>
+                  </span>
+                </div>
+                <%= form.text_field :uf, id: :pais, class: 'form-control', placeholder: 'ESTADO' %>
+
+                
+              </div></span>
+
+              <span class="bmd-form-group">
+              <div class="input-group">
+
+              <div class="input-group-prepend">
+              
+                <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">portrait</i>
+               </span>
+
+               <span class="input-group-text">
+               Cargo
+               </span>
+               </div>
+
+                <%= form.collection_select(:cargos, Cargo.order(:id), :id, :cargo, {include_blank: false}, {:class => 'form-control selectpicker'}) %>
+              </div>
+                
+                  <span class="input-group-text">
+                    <i class="material-icons">location_on</i>
+                  </span>
+                </div>
+                <%= form.text_field :uf, id: :pais, class: 'form-control', placeholder: 'ESTADO' %>
+
+                
+              </div>
+
+              </span>
+          </div>
+          <div class="footer text-center actions">
+            <%= form.submit "ENTRAR", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
+          </div>
+        </form>
+      </div>
     </div>
-
-    <div class="form-group">
-      <label for="exampleInputEmail1">Salario</label>
-      <%= form.number_field :nome, class: 'form-control', placeholder: "Insira seu salario"%>
-    </div>
-
-    <div class="form-group">
-      <label for="exampleInputEmail1">Nome</label>
-      <%= form.text_field :nome, class: 'form-control', placeholder: "Insira seu nome"%>
-    </div>
-
-    <div class="form-group">
-      <label for="exampleInputEmail1">Nome</label>
-      <%= form.text_field :nome, class: 'form-control', placeholder: "Insira seu nome"%>
-    </div>
-
-    <div class="form-group">
-      <label for="exampleInputEmail1">Nome</label>
-      <%= form.text_field :nome, class: 'form-control', placeholder: "Insira seu nome"%>
-    </div>
-
-    <div class="form-group">
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-
-    <div class="form-group">
-      <label for="exampleInputPassword1">CPF</label>
-      <%= form.text_field :cpf, id: :funcionario_cpf, class: 'form-control'%>
-    </div>
-
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <br>
   </div>
-
-</section>
+</div>
+</div>
 
 <div class="field">
 </div>

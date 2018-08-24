@@ -1,0 +1,15 @@
+body {
+	background: #323b44 !important;
+	color: #98a6ad;
+	overflow-x: hidden !important;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+.nav-color {
+	background-color: #448aff !important;
+	border-radius: 0;
+	min-height: 70px;
+}

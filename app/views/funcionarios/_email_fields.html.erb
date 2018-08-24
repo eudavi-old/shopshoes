@@ -1,8 +1,19 @@
 <div class="nested-fields">
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <%= link_to_remove_association "remove experience", f %>
+
+	<span class="bmd-form-group"><div class="input-group">
+		<div class="input-group-prepend">
+			<span class="input-group-text">
+				<i class="material-icons">email</i>
+
+			</span>
+
+		</div>
+
+		<%= f.text_field :email,  class: 'form-control', placeholder: "Email" %>
+		<%= link_to_remove_association "Excluir Email", f, class: 'btn' %>
+	</div></span>
+
+	
+	
 
 </div>
