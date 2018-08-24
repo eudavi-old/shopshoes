@@ -1,82 +1,166 @@
 <%= form_with(model: cliente, local: true) do |form| %>
-  <% if cliente.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
-
-      <ul>
-      <% cliente.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf, id: :cliente_cpf %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome, id: :cliente_nome %>
-  </div>
-
-  <div class="field">
-    <%= form.label :data_nasc %>
-    <%= form.date_select :data_nasc, id: :cliente_data_nasc %>
-  </div>
-
-  <div class="field">
-    <%= form.label :login %>
-    <%= form.text_field :login, id: :cliente_login %>
-  </div>
-
-  <div class="field">
-    <%= form.label :senha %>
-    <%= form.text_field :senha, id: :cliente_senha %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cep %>
-    <%= form.text_field :cep, id: :cliente_cep %>
-  </div>
-
-  <div class="field">
-    <%= form.label :logradouro %>
-    <%= form.text_field :logradouro, id: :cliente_logradouro %>
-  </div>
-
-  <div class="field">
-    <%= form.label :debito %>
-    <%= form.text_field :debito, id: :cliente_debito %>
-  </div>
-
-  <div class="field">
-    <%= form.label :num_logradouro %>
-    <%= form.number_field :num_logradouro, id: :cliente_num_logradouro %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bairro %>
-    <%= form.text_field :bairro, id: :cliente_bairro %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cidade %>
-    <%= form.text_field :cidade, id: :cliente_cidade %>
-  </div>
-
-  <div class="field">
-    <%= form.label :uf %>
-    <%= form.text_field :uf, id: :cliente_uf %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pais %>
-    <%= form.text_field :pais, id: :cliente_pais %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<% if cliente.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+  <ul>
+    <% cliente.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
+
+<br>
+
+
+
+<div class="header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="card card-login">
+          <form class="form" method="" action="">
+            <div class="card-header card-header-primary text-center">
+              <h4 class="card-title">CADASTRO DE CLIENTE</h4>
+            </div>
+            <div class="card-body">
+             <span class="bmd-form-group">
+               <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">contacts</i>
+                  </span>
+                </div>
+                <%= form.text_field :cpf, id: :cliente_cpf, class: 'form-control', placeholder: 'CPF' %>
+              </div></span>
+              <span class="bmd-form-group">
+               <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">person</i>
+                  </span>
+                </div>
+                <%= form.text_field :login, class: 'form-control', placeholder: 'Login' %>
+              </div></span>
+
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+
+                <%= form.password_field :senha , class: 'form-control', placeholder: 'Senha...'%>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">accessibility</i>
+                  </span>
+                </div>
+                <%= form.text_field :nome, id: :cliente_nome, class: 'form-control', placeholder: 'Nome do cliente' %>
+              </div></span>
+
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">money</i>
+                  </span>
+                </div>
+                <%= form.number_field :salario, id: :cliente_salario, class: 'form-control', placeholder: 'Salario do cliente' %>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+
+                    <i class="material-icons">date_range</i>
+
+                  </span>
+                </div>
+                <%= form.text_field :data_nasc, id: :func_data_nasc, class: 'form-control datetimepicker', placeholder: 'Data de Nascimento' %>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">navigation</i>
+                  </span>
+                </div>
+                <%= form.text_field :logradouro, id: :cliente_logradouro, class: 'form-control', placeholder: 'LOGRADOURO' %>
+
+                <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">filter_9</i>
+                </span>
+              </div>
+
+              <%= form.text_field :num_logradouro, id: :cliente_logradouro_num, class: 'form-control', placeholder: 'NUMERO LOGRADOURO' %>
+                
+                
+              </div></span>
+
+
+              <span class="bmd-form-group"><div class="input-group">
+
+               <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">location_city</i>
+                </span>
+              </div>
+
+              <%= form.text_field :cidade, id: :cliente_cidade, class: 'form-control', placeholder: 'CIDADE' %>
+
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">home</i>
+                </span>
+              </div>
+              
+              <%= form.text_field :bairro, id: :cliente_bairro, class: 'form-control', placeholder: 'BAIRRO' %>
+              
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">my_location</i>
+                  </span>
+                </div>
+                <%= form.text_field :cep, id: :cliente_cep, class: 'form-control', placeholder: 'CEP' %>
+
+            </div></span>
+
+             <span class="bmd-form-group"><div class="input-group">
+
+              <div class="input-group-prepend">
+
+                <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">public</i>
+                </span>
+              </div>
+
+              <%= form.text_field :pais, id: :cliente_logradouro_num, class: 'form-control', placeholder: 'País' %>
+                
+                  <span class="input-group-text">
+                    <i class="material-icons">location_on</i>
+                  </span>
+                </div>
+                <%= form.text_field :uf, id: :pais, class: 'form-control', placeholder: 'ESTADO' %>
+              </div></span>
+
+          
+          </div>
+          <div class="footer text-center actions">
+            <%= form.submit "CADASTRAR cliente", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <% end %>
