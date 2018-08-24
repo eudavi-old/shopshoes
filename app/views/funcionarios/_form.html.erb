@@ -14,7 +14,7 @@
 
 
 
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
+<div class="header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
   <div class="container">
     <div class="row">
       <div class="col-md-8 ml-auto mr-auto">
@@ -138,7 +138,7 @@
 
                 <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="material-icons">location_on</i>
+                  <i class="material-icons">public</i>
                 </span>
               </div>
 
@@ -149,41 +149,43 @@
                   </span>
                 </div>
                 <%= form.text_field :uf, id: :pais, class: 'form-control', placeholder: 'ESTADO' %>
-
-                
               </div></span>
 
-              <span class="bmd-form-group">
-              <div class="input-group">
 
-              <div class="input-group-prepend">
-              
+              <span class="bmd-form-group"><div class="input-group">
                 <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="material-icons">portrait</i>
-               </span>
-
-               <span class="input-group-text">
-               Cargo
-               </span>
-               </div>
-
-                <%= form.collection_select(:cargos, Cargo.order(:id), :id, :cargo, {include_blank: false}, {:class => 'form-control selectpicker'}) %>
-              </div>
-                
                   <span class="input-group-text">
-                    <i class="material-icons">location_on</i>
+                    <i class="material-icons">work</i>
+
                   </span>
-                </div>
-                <%= form.text_field :uf, id: :pais, class: 'form-control', placeholder: 'ESTADO' %>
 
+                  <span class="input-group-text">
+                    Cargo:
+                  </span>
+
+                </div> <%= form.collection_select(:cargos, Cargo.order(:id), :id, :cargo, {include_blank: false}, {:class => 'form-control selectpicker'}) %>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">group</i>
+
+                  </span>
+
+                  <span class="input-group-text">
+                    Setor:
+                  </span>
+
+                </div> <%= form.collection_select(:setors, Setor.order(:id), :id, :setor, {include_blank: false}, {:class => 'form-control selectpicker'}) %>
+              </div></span>
+              
                 
-              </div>
 
-              </span>
+
           </div>
           <div class="footer text-center actions">
-            <%= form.submit "ENTRAR", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
+            <%= form.submit "CADASTRAR FUNCIONARIO", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
           </div>
         </form>
       </div>
@@ -192,101 +194,4 @@
 </div>
 </div>
 
-<div class="field">
-</div>
-
-<div class="field">
-  <%= form.label :nome %>
-  <%= form.text_field :nome, id: :funcionario_nome %>
-</div>
-
-<div class="field">
-  <%= form.label :salario %>
-  <%= form.text_field :salario, id: :funcionario_salario %>
-</div>
-
-<div class="field">
-  <%= form.label :data_nasc %>
-  <%= form.date_select :data_nasc, id: :funcionario_data_nasc %>
-</div>
-
-<div class="field">
-  <%= form.label :login %>
-  <%= form.text_field :login, id: :funcionario_login %>
-</div>
-
-<div class="field">
-  <%= form.label :senha %>
-  <%= form.text_field :senha, id: :funcionario_senha %>
-</div>
-
-<div class="field">
-  <%= form.label :cep %>
-  <%= form.number_field :cep, id: :funcionario_cep %>
-</div>
-
-<div class="field">
-  <%= form.label :logradouro %>
-  <%= form.text_field :logradouro, id: :funcionario_logradouro %>
-</div>
-
-<div class="field">
-  <%= form.label :num_logradouro %>
-  <%= form.number_field :num_logradouro, id: :funcionario_num_logradouro %>
-</div>
-
-<div class="field">
-  <%= form.label :bairro %>
-  <%= form.text_field :bairro, id: :funcionario_bairro %>
-</div>
-
-<div class="field">
-  <%= form.label :cidade %>
-  <%= form.text_field :cidade, id: :funcionario_cidade %>
-</div>
-
-<div class="field">
-  <%= form.label :uf %>
-  <%= form.text_field :uf, id: :funcionario_uf %>
-</div>
-
-<div class="field">
-  <%= form.label :pais %>
-  <%= form.text_field :pais, id: :funcionario_pais %>
-</div>
-
-<div class="field">
-  <%= form.label :cargo %>
-  <%= form.collection_select :cargos, Cargo.order(:id), :id, :cargo, class: 'browser-default'%>
-</div>
-
-<div class="field">
-  <%= form.label :setor %>
-  <%= form.collection_select :setors, Setor.order(:id), :id, :setor, class: 'browser-default'%>
-</div>
-
-<h4> Email </h4>
-
-<div id="emails">
-  <%= form.fields_for :emails do |email| %>
-      <!-- COMENTÁRIO:
-        é uma exigencia também que os campos do seu nested esteja numa partial "nome_do_seu_nested_no_singular_fields"
-        no nosso caso _experience_fields.html.erb
-      -->
-      <%= render 'email_fields', f: email %>
-      <% end %>
-
-    <!-- COMENTÁRIO:
-      O link para adicionar dinamicamente os fields deve estar dentro de uma div .links
-    -->
-    <div class="links">
-      <!-- COMENTÁRIO: O link_to_add_association é um helper provido pela gem -->
-      <%= link_to_add_association 'adicionar email', form, :emails %>
-      <br><br>
-    </div>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
   <% end %>
