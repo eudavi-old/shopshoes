@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+s<p id="notice"><%= notice %></p>
 
-<h1>Funcionarios</h1>
+<h1>Funcionários</h1>
 
-<table>
-  <thead>
+<table class="table table-responsive">
+  <thead class="thead-dark">
     <tr>
       <th>Cpf</th>
       <th>Nome</th>
@@ -57,5 +57,4 @@
 </table>
 
 <br>
-
-<%= link_to 'New Funcionario', new_funcionario_path %>
+<%= link_to 'New Funcionario', new_funcionario_path, class: "btn btn-dark" %>
