@@ -1,120 +1,151 @@
 <%= form_with(model: funcionario, local: true) do |form| %>
-  <% if funcionario.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(funcionario.errors.count, "error") %> prohibited this funcionario from being saved:</h2>
-      <ul>
-      <% funcionario.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if funcionario.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(funcionario.errors.count, "error") %> prohibited this funcionario from being saved:</h2>
+  <ul>
+    <% funcionario.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<br>
 
 <section class="section">
   <div class="container card">
     <h1>Novo Funcionário</h1>
 
     <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <label for="exampleInputEmail1">Nome</label>
+      <%= form.text_field :nome, class: 'form-control', placeholder: "Insira seu nome"%>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Salario</label>
+      <%= form.number_field :nome, class: 'form-control', placeholder: "Insira seu salario"%>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nome</label>
+      <%= form.text_field :nome, class: 'form-control', placeholder: "Insira seu nome"%>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nome</label>
+      <%= form.text_field :nome, class: 'form-control', placeholder: "Insira seu nome"%>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nome</label>
+      <%= form.text_field :nome, class: 'form-control', placeholder: "Insira seu nome"%>
+    </div>
+
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">CPF</label>
+      <%= form.text_field :cpf, id: :funcionario_cpf, class: 'form-control'%>
+    </div>
+
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <br>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">CPF</label>
-     <%= form.text_field :cpf, id: :funcionario_cpf, class: 'form-control', placeholder: 'CPF'%>
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
+
 </section>
-  
-  <div class="field">
-  </div>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome, id: :funcionario_nome %>
-  </div>
+<div class="field">
+</div>
 
-  <div class="field">
-    <%= form.label :salario %>
-    <%= form.text_field :salario, id: :funcionario_salario %>
-  </div>
+<div class="field">
+  <%= form.label :nome %>
+  <%= form.text_field :nome, id: :funcionario_nome %>
+</div>
 
-  <div class="field">
-    <%= form.label :data_nasc %>
-    <%= form.date_select :data_nasc, id: :funcionario_data_nasc %>
-  </div>
+<div class="field">
+  <%= form.label :salario %>
+  <%= form.text_field :salario, id: :funcionario_salario %>
+</div>
 
-  <div class="field">
-    <%= form.label :login %>
-    <%= form.text_field :login, id: :funcionario_login %>
-  </div>
+<div class="field">
+  <%= form.label :data_nasc %>
+  <%= form.date_select :data_nasc, id: :funcionario_data_nasc %>
+</div>
 
-  <div class="field">
-    <%= form.label :senha %>
-    <%= form.text_field :senha, id: :funcionario_senha %>
-  </div>
+<div class="field">
+  <%= form.label :login %>
+  <%= form.text_field :login, id: :funcionario_login %>
+</div>
 
-  <div class="field">
-    <%= form.label :cep %>
-    <%= form.number_field :cep, id: :funcionario_cep %>
-  </div>
+<div class="field">
+  <%= form.label :senha %>
+  <%= form.text_field :senha, id: :funcionario_senha %>
+</div>
 
-  <div class="field">
-    <%= form.label :logradouro %>
-    <%= form.text_field :logradouro, id: :funcionario_logradouro %>
-  </div>
+<div class="field">
+  <%= form.label :cep %>
+  <%= form.number_field :cep, id: :funcionario_cep %>
+</div>
 
-  <div class="field">
-    <%= form.label :num_logradouro %>
-    <%= form.number_field :num_logradouro, id: :funcionario_num_logradouro %>
-  </div>
+<div class="field">
+  <%= form.label :logradouro %>
+  <%= form.text_field :logradouro, id: :funcionario_logradouro %>
+</div>
 
-  <div class="field">
-    <%= form.label :bairro %>
-    <%= form.text_field :bairro, id: :funcionario_bairro %>
-  </div>
+<div class="field">
+  <%= form.label :num_logradouro %>
+  <%= form.number_field :num_logradouro, id: :funcionario_num_logradouro %>
+</div>
 
-  <div class="field">
-    <%= form.label :cidade %>
-    <%= form.text_field :cidade, id: :funcionario_cidade %>
-  </div>
+<div class="field">
+  <%= form.label :bairro %>
+  <%= form.text_field :bairro, id: :funcionario_bairro %>
+</div>
 
-  <div class="field">
-    <%= form.label :uf %>
-    <%= form.text_field :uf, id: :funcionario_uf %>
-  </div>
+<div class="field">
+  <%= form.label :cidade %>
+  <%= form.text_field :cidade, id: :funcionario_cidade %>
+</div>
 
-  <div class="field">
-    <%= form.label :pais %>
-    <%= form.text_field :pais, id: :funcionario_pais %>
-  </div>
+<div class="field">
+  <%= form.label :uf %>
+  <%= form.text_field :uf, id: :funcionario_uf %>
+</div>
 
-  <div class="field">
-    <%= form.label :cargo %>
-    <%= form.collection_select :cargos, Cargo.order(:id), :id, :cargo, class: 'browser-default'%>
-  </div>
+<div class="field">
+  <%= form.label :pais %>
+  <%= form.text_field :pais, id: :funcionario_pais %>
+</div>
 
-  <div class="field">
-    <%= form.label :setor %>
-    <%= form.collection_select :setors, Setor.order(:id), :id, :setor, class: 'browser-default'%>
-  </div>
+<div class="field">
+  <%= form.label :cargo %>
+  <%= form.collection_select :cargos, Cargo.order(:id), :id, :cargo, class: 'browser-default'%>
+</div>
 
-  <h4> Email </h4>
+<div class="field">
+  <%= form.label :setor %>
+  <%= form.collection_select :setors, Setor.order(:id), :id, :setor, class: 'browser-default'%>
+</div>
 
-  <div id="emails">
-    <%= form.fields_for :emails do |email| %>
+<h4> Email </h4>
+
+<div id="emails">
+  <%= form.fields_for :emails do |email| %>
       <!-- COMENTÁRIO:
         é uma exigencia também que os campos do seu nested esteja numa partial "nome_do_seu_nested_no_singular_fields"
         no nosso caso _experience_fields.html.erb
       -->
       <%= render 'email_fields', f: email %>
-    <% end %>
- 
+      <% end %>
+
     <!-- COMENTÁRIO:
       O link para adicionar dinamicamente os fields deve estar dentro de uma div .links
     -->
@@ -128,4 +159,4 @@
   <div class="actions">
     <%= form.submit %>
   </div>
-<% end %>
+  <% end %>
