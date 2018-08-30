@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :telefones
+  get 'telefone/telefone'
+
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :clientes

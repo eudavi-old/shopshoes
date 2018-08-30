@@ -12,8 +12,6 @@
 
 <br>
 
-
-
 <div class="header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
   <div class="container">
     <div class="row">
@@ -33,16 +31,6 @@
                 </div>
                 <%= form.text_field :login, id: :funcionario_login, class: 'form-control', placeholder: 'Login' %>
               </div></span>
-
-
-              <%= form.fields_for :emails do |email| %>
-              <%= render 'email_fields', f: email %>
-              <% end %>
-
-
-              <div class="links">
-                <%= link_to_add_association "Adicionar Email", form, :emails, class: "btn" %>
-              </div>
 
               <span class="bmd-form-group"><div class="input-group">
                 <div class="input-group-prepend">
@@ -143,7 +131,6 @@
               </div>
 
               <%= form.text_field :pais, id: :funcionario_logradouro_num, class: 'form-control', placeholder: 'País' %>
-                
                   <span class="input-group-text">
                     <i class="material-icons">location_on</i>
                   </span>
@@ -180,7 +167,21 @@
                 </div> <%= form.collection_select(:setors, Setor.order(:id), :id, :setor, {include_blank: false}, {:class => 'form-control selectpicker'}) %>
               </div></span>
               
-                
+                 <%= form.fields_for :emails do |email| %>
+                <%= render 'email_fields', f: email %>
+              <% end %>
+
+              <div class="links">
+                <%= link_to_add_association "Adicionar Email", form, :emails, class: "btn" %>
+              </div>
+
+              <%= form.fields_for :telefones do |telefone| %>
+                <%= render 'telefone_fields', f: telefone %>
+              <% end %>
+
+              <div class="links">
+                <%= link_to_add_association "Adicionar Telefone", form, :telefones, class: "btn" %>
+              </div>
 
 
           </div>

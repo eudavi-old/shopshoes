@@ -25,8 +25,12 @@ class FuncionariosController < ApplicationController
   # POST /funcionarios.json
   def create
     @funcionario = Funcionario.new(funcionario_params)
-    @funcionario.cargos << Cargo.find(params[:funcionario][:cargos])
-    @funcionario.setors << Setor.find(params[:funcionario][:setors])
+    if Cargo.count > 1
+      @funcionario.cargos << Cargo.find(params[:funcionario][:cargos])
+    end
+    if Setor.count > 1
+      @funcionario.setors << Setor.find(params[:funcionario][:setors])
+    end
 
     respond_to do |format|
       if @funcionario.save
@@ -72,6 +76,6 @@ class FuncionariosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def funcionario_params
       params.require(:funcionario).permit(:cpf, :nome, :salario, :data_nasc, :login, :senha, :cep, 
-        :logradouro, :num_logradouro, :bairro, :cidade, :uf, :pais, emails_attributes: [:email])
+        :logradouro, :num_logradouro, :bairro, :cidade, :uf, :pais, emails_attributes: [:email], telefones_attributes: [:telefone])
     end
 end
