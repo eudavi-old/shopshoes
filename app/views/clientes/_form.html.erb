@@ -86,7 +86,7 @@
 
               <span class="bmd-form-group"><div class="input-group">
 
-              <div class="input-group-prepend">
+                <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="material-icons">navigation</i>
                   </span>
@@ -94,12 +94,12 @@
                 <%= form.text_field :logradouro, id: :cliente_logradouro, class: 'form-control', placeholder: 'LOGRADOURO' %>
 
                 <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="material-icons">filter_9</i>
-                </span>
-              </div>
+                  <span class="input-group-text">
+                    <i class="material-icons">filter_9</i>
+                  </span>
+                </div>
 
-              <%= form.text_field :num_logradouro, id: :cliente_logradouro_num, class: 'form-control', placeholder: 'NUMERO LOGRADOURO' %>
+                <%= form.text_field :num_logradouro, id: :cliente_logradouro_num, class: 'form-control', placeholder: 'NUMERO LOGRADOURO' %>
                 
                 
               </div></span>
@@ -124,34 +124,44 @@
               <%= form.text_field :bairro, id: :cliente_bairro, class: 'form-control', placeholder: 'BAIRRO' %>
               
               <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="material-icons">my_location</i>
-                  </span>
-                </div>
-                <%= form.text_field :cep, id: :cliente_cep, class: 'form-control', placeholder: 'CEP' %>
+                <span class="input-group-text">
+                  <i class="material-icons">my_location</i>
+                </span>
+              </div>
+              <%= form.text_field :cep, id: :cliente_cep, class: 'form-control', placeholder: 'CEP' %>
 
             </div></span>
 
-             <span class="bmd-form-group"><div class="input-group">
+            <span class="bmd-form-group"><div class="input-group">
 
               <div class="input-group-prepend">
 
                 <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="material-icons">public</i>
-                </span>
-              </div>
-
-              <%= form.text_field :pais, id: :cliente_logradouro_num, class: 'form-control', placeholder: 'País' %>
-                
                   <span class="input-group-text">
-                    <i class="material-icons">location_on</i>
+                    <i class="material-icons">public</i>
                   </span>
                 </div>
-                <%= form.text_field :uf, id: :pais, class: 'form-control', placeholder: 'ESTADO' %>
-              </div></span>
 
-          
+                <%= form.text_field :pais, id: :cliente_logradouro_num, class: 'form-control', placeholder: 'País' %>
+                
+                <span class="input-group-text">
+                  <i class="material-icons">location_on</i>
+                </span>
+              </div>
+              <%= form.text_field :uf, id: :pais, class: 'form-control', placeholder: 'ESTADO' %>
+            </div></span>
+
+            
+            <%= form.fields_for :emails do |email| %>
+            <%= render 'email_fields', f: email %>
+            <% end %>
+
+            <div class="links">
+              <%= link_to_add_association "Adicionar Email", form, :emails, class: "btn" %>
+            </div>
+
+
+            
           </div>
           <div class="footer text-center actions">
             <%= form.submit "CADASTRAR cliente", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
@@ -163,4 +173,4 @@
 </div>
 </div>
 
-  <% end %>
+<% end %>
