@@ -1,4 +1,4 @@
-Gerenciador APIS II
+Loja Online APIS II
 
 * Ruby version: 2.3.3
 
