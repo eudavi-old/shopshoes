@@ -26,6 +26,11 @@ class ClientesController < ApplicationController
   def create
     @cliente = Cliente.new(cliente_params)
 
+    @user = User.new(user_params)
+    @user.cliente_id = @cliente.id
+
+    @user.save!
+
     respond_to do |format|
       if @cliente.save
         format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
@@ -69,7 +74,11 @@ class ClientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cliente_params
-      params.require(:cliente).permit(:cpf, :nome, :data_nasc, :login, :senha, :cep, 
+      params.require(:cliente).permit(:cpf, :nome, :data_nasc, :cep, 
         :logradouro, :debito, :num_logradouro, :bairro, :cidade, :uf, :pais, emails_attributes: [:email])
+    end
+
+    def user_params
+      params.require(:cliente).permit(:email,:password,:password_confirmation)
     end
 end

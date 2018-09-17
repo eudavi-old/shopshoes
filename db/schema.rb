@@ -44,8 +44,6 @@ ActiveRecord::Schema.define(version: 20180830202853) do
     t.string "cpf"
     t.string "nome"
     t.date "data_nasc"
-    t.string "login"
-    t.string "senha"
     t.string "cep"
     t.string "logradouro"
     t.float "debito"
@@ -79,8 +77,6 @@ ActiveRecord::Schema.define(version: 20180830202853) do
     t.string "nome"
     t.float "salario"
     t.date "data_nasc"
-    t.string "login"
-    t.string "senha"
     t.integer "cep"
     t.string "logradouro"
     t.integer "num_logradouro"
@@ -114,6 +110,8 @@ ActiveRecord::Schema.define(version: 20180830202853) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.bigint "funcionario_id"
+    t.bigint "cliente_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -121,11 +119,15 @@ ActiveRecord::Schema.define(version: 20180830202853) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.index ["cliente_id"], name: "index_users_on_cliente_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["funcionario_id"], name: "index_users_on_funcionario_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "emails", "clientes"
   add_foreign_key "emails", "funcionarios"
   add_foreign_key "telefones", "funcionarios"
+  add_foreign_key "users", "clientes"
+  add_foreign_key "users", "funcionarios"
 end

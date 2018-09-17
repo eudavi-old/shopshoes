@@ -4,8 +4,6 @@ class CreateClientes < ActiveRecord::Migration[5.1]
       t.string :cpf
       t.string :nome
       t.date :data_nasc
-      t.string :login
-      t.string :senha
       t.string :cep
       t.string :logradouro
       t.float :debito

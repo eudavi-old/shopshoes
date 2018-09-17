@@ -5,8 +5,6 @@ class CreateFuncionarios < ActiveRecord::Migration[5.1]
       t.string :nome
       t.float :salario
       t.date :data_nasc
-      t.string :login
-      t.string :senha
       t.integer :cep
       t.string :logradouro
       t.integer :num_logradouro

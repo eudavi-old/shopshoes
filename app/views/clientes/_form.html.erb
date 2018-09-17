@@ -51,7 +51,17 @@
                   </span>
                 </div>
 
-                <%= form.password_field :senha , class: 'form-control', placeholder: 'Senha...'%>
+                <%= form.password_field :password , class: 'form-control', placeholder: 'Senha...'%>
+              </div></span>
+              
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+
+                <%= form.password_field :password_confirmation , class: 'form-control', placeholder: 'Senha...'%>
               </div></span>
 
               <span class="bmd-form-group"><div class="input-group">
@@ -153,7 +163,7 @@
 
             
             <%= form.fields_for :emails do |email| %>
-            <%= render 'email_fields', f: email %>
+              <%= render 'email_fields', f: email %>
             <% end %>
 
             <div class="links">
