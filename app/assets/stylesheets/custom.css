@@ -1,5 +1,5 @@
 body {
-	background: #323b44 !important;
+	background: #171440 !important;
 	color: #98a6ad;
 	overflow-x: hidden !important;
 }
@@ -19,4 +19,22 @@ main {
     overflow: hidden;
     margin-top: -10px;
     display: block;
+}
+
+.stripe-banner {
+    width: 1920px;
+    height: 50px;
+    max-height: 50px;
+    bottom: 88%;
+    right: -300px;
+    position: absolute;
+}
+
+.first-image {
+	width: auto;
+}
+
+.some-infos {
+	width: auto;
+	height: 250px;
 }
