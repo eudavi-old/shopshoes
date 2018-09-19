@@ -39,8 +39,30 @@
                   </span>
                 </div>
 
-                <%= form.password_field :senha, autocomplete: "current-password" , class: 'form-control', placeholder: 'Senha...'%>
+                <%= form.password_field :password, autocomplete: "current-password" , class: 'form-control', placeholder: 'Senha...'%>
               </div></span>
+
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+
+                <%= form.password_field :password_confirmation, autocomplete: "current-password" , class: 'form-control', placeholder: 'Confime sua senha...'%>
+              </div></span>
+
+              <span class="bmd-form-group">
+               <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">mail</i>
+                  </span>
+                </div>
+                <%= form.text_field :email, id: :funcionario_login, class: 'form-control', placeholder: 'Email' %>
+              </div></span>
+
 
               <span class="bmd-form-group"><div class="input-group">
                 <div class="input-group-prepend">
@@ -167,13 +189,7 @@
                 </div> <%= form.collection_select(:setors, Setor.order(:id), :id, :setor, {include_blank: false}, {:class => 'form-control selectpicker'}) %>
               </div></span>
               
-                 <%= form.fields_for :emails do |email| %>
-                <%= render 'email_fields', f: email %>
-              <% end %>
-
-              <div class="links">
-                <%= link_to_add_association "Adicionar Email", form, :emails, class: "btn" %>
-              </div>
+              
 
               <%= form.fields_for :telefones do |telefone| %>
                 <%= render 'telefone_fields', f: telefone %>

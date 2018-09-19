@@ -12,8 +12,6 @@
 
 <br>
 
-
-
 <div class="header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
   <div class="container">
     <div class="row">
@@ -61,7 +59,17 @@
                   </span>
                 </div>
 
-                <%= form.password_field :password_confirmation , class: 'form-control', placeholder: 'Senha...'%>
+                <%= form.password_field :password_confirmation , class: 'form-control', placeholder: 'Confirme sua Senha...'%>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">mail</i>
+                  </span>
+                </div>
+
+                <%= form.text_field :email , class: 'form-control', placeholder: 'Email'%>
               </div></span>
 
               <span class="bmd-form-group"><div class="input-group">
@@ -159,19 +167,7 @@
                 </span>
               </div>
               <%= form.text_field :uf, id: :pais, class: 'form-control', placeholder: 'ESTADO' %>
-            </div></span>
-
-            
-            <%= form.fields_for :emails do |email| %>
-              <%= render 'email_fields', f: email %>
-            <% end %>
-
-            <div class="links">
-              <%= link_to_add_association "Adicionar Email", form, :emails, class: "btn" %>
-            </div>
-
-
-            
+            </div></span>            
           </div>
           <div class="footer text-center actions">
             <%= form.submit "CADASTRAR cliente", class: 'btn btn-primary btn-link btn-wd btn-lg' %>

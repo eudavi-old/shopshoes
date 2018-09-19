@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :clientes
-  resources :emails
   resources :funcionarios
   resources :dado_bancarios
   resources :agencia

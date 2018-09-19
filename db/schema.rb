@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180830202853) do
+ActiveRecord::Schema.define(version: 20180830201545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,16 +60,6 @@ ActiveRecord::Schema.define(version: 20180830202853) do
     t.string "conta"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "emails", force: :cascade do |t|
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "funcionario_id"
-    t.bigint "cliente_id"
-    t.index ["cliente_id"], name: "index_emails_on_cliente_id"
-    t.index ["funcionario_id"], name: "index_emails_on_funcionario_id"
   end
 
   create_table "funcionarios", force: :cascade do |t|
@@ -125,8 +115,6 @@ ActiveRecord::Schema.define(version: 20180830202853) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "emails", "clientes"
-  add_foreign_key "emails", "funcionarios"
   add_foreign_key "telefones", "funcionarios"
   add_foreign_key "users", "clientes"
   add_foreign_key "users", "funcionarios"

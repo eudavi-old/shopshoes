@@ -25,14 +25,15 @@ class ClientesController < ApplicationController
   # POST /clientes.json
   def create
     @cliente = Cliente.new(cliente_params)
-
     @user = User.new(user_params)
-    @user.cliente_id = @cliente.id
 
-    @user.save!
 
     respond_to do |format|
       if @cliente.save
+        
+        @user.cliente_id = @cliente.id
+        @user.save!
+
         format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
         format.json { render :show, status: :created, location: @cliente }
       else

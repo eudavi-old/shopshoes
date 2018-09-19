@@ -13,3 +13,10 @@ main {
 	border-radius: 0;
 	min-height: 70px;
 }
+
+.logo-big {
+    width: 200px;
+    overflow: hidden;
+    margin-top: -10px;
+    display: block;
+}
