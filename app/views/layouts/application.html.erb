@@ -37,15 +37,15 @@
 
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a href="/users/sign_in" class="nav-link">
-							<i class="material-icons">person</i> Login
-						</a>
-					</li>
-
 					<% if user_signed_in? %>
 					<li class="nav-item">
 						<%= link_to '<i class="material-icons">rotate_left</i> Sair'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link' %>
+					</li>
+					<% else %>
+						<li class="nav-item">
+						<a href="/users/sign_in" class="nav-link">
+							<i class="material-icons">person</i> Login
+						</a>
 					</li>
 					<% end %> 
 				</ul>

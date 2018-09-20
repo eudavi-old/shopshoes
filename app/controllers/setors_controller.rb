@@ -28,7 +28,7 @@ class SetorsController < ApplicationController
 
     respond_to do |format|
       if @setor.save
-        format.html { redirect_to @setor, notice: 'Setor was successfully created.' }
+        format.html { redirect_to rails_admin_path, notice: 'Setor was successfully created.' }
         format.json { render :show, status: :created, location: @setor }
       else
         format.html { render :new }

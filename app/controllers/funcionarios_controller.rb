@@ -42,7 +42,7 @@ class FuncionariosController < ApplicationController
         @user.funcionario_id = @funcionario.id
         @user.save!
 
-        format.html { redirect_to @funcionario, notice: 'Funcionario was successfully created.' }
+        format.html { redirect_to rails_admin_path, notice: 'Funcionario was successfully created.' }
         format.json { render :show, status: :created, location: @funcionario }
       else
         format.html { render :new }

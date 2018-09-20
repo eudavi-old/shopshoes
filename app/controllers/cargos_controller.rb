@@ -28,7 +28,7 @@ class CargosController < ApplicationController
 
     respond_to do |format|
       if @cargo.save
-        format.html { redirect_to @cargo, notice: 'Cargo was successfully created.' }
+        format.html { redirect_to rails_admin_path, notice: 'Cargo was successfully created.' }
         format.json { render :show, status: :created, location: @cargo }
       else
         format.html { render :new }
