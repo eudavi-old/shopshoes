@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bootsnap', require: false
 gem 'bootstrap',     '~> 4.1.1'
 gem 'material-sass', '~> 4.1.1'
 gem 'material_icons'

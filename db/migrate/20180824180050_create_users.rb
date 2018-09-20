@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     create_table :users do |t|
       t.references :funcionario, foreign_key: :true
       t.references :cliente, foreign_key: :true
+      t.boolean :admin
       t.timestamps
     end
   end

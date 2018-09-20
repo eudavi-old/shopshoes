@@ -3,8 +3,12 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   ## == Devise ==
-  config.authenticate_with do
-    warden.authenticate! scope: :user
+  config.authenticate_with do |controller|
+    if current_user.nil?
+      redirect_to main_app.new_user_session_path, flash: {error: 'Please Login to Continue..'}
+    elsif not current_user.admin?
+      redirect_to main_app.root_path, flash: {error: 'You are not Admin bro!'}
+    end
   end
   # config.current_user_method(&:current_user)
 
