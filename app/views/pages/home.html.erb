@@ -23,65 +23,8 @@
 </head>
 <body>
 
-  <nav class="navbar fixed-top navbar-expand-lg"  color-on-scroll="100" ">
-    <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="/">
-          <div class="logo-big">
-            <img src="/assets/logo_loja.png" class="img-fluid">
-          </div>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Lace and Leather</span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-        <% if not user_signed_in? %>
-          <li class="nav-item">
-            <a href="/clientes/new" class="nav-link">
-              <i class="material-icons">input</i> CADASTRE-SE (CLIENTE)
-            </a>
-          </li>
-          <% end %>
-          <% if current_user != nil and current_user.is_admin? %>
-          <li class="nav-item">
-            <%= link_to '<i class="material-icons">person</i> Cadastrar Funcionário'.html_safe, new_funcionario_path, class: 'nav-link' %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to '<i class="material-icons">work</i> Cadastrar Cargo'.html_safe, new_cargo_path, class: 'nav-link' %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to '<i class="material-icons">group</i> Cadastrar Setor'.html_safe, new_setor_path, class: 'nav-link' %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to '<i class="material-icons">dashboard</i> Dashboard'.html_safe, rails_admin_path, class: 'nav-link' %>
-          </li>
-          <% end %>
-          <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to '<i class="material-icons">rotate_left</i> Sair'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link' %>
-          </li>
-          <% else %>
-          <li class="nav-item">
-            <a href="/users/sign_in" class="nav-link">
-              <i class="material-icons">person</i> ENTRAR
-            </a>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
+  <%= render 'layouts/navbar' %>
+  
   <div class="page-header" data-parallax="true" style=" margin-top: 50px; background-image: url('/assets/rochelle.jpg');">
     <br>
     <div class="container">

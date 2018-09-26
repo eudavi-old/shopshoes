@@ -1,4 +1,5 @@
 class SetorsController < ApplicationController
+  
   before_action :set_setor, only: [:show, :edit, :update, :destroy]
 
   # GET /setors
@@ -69,6 +70,6 @@ class SetorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def setor_params
-      params.require(:setor).permit(:setor)
+      params.require(:setor).permit(:setor, :manipular_cliente, :manipular_funcionario, :manipular_produto)
     end
 end

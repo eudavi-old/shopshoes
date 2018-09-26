@@ -1,8 +1,9 @@
 class FuncionariosController < ApplicationController
   
   before_action :authenticate_user!
+  before_action :manipular_funcionario?, only: [:new, :create, :edit, :show, :destroy]
   before_action :is_admin?, only: [:new, :create, :edit, :update, :destroy]
-
+  
   # GET /funcionarios
   # GET /funcionarios.json
   def index
@@ -79,12 +80,6 @@ class FuncionariosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_funcionario
       @funcionario = Funcionario.find(params[:id])
-    end
-
-    def is_admin?
-      if not current_user.admin?
-        redirect_to root_path
-      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

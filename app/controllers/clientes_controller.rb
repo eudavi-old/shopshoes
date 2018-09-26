@@ -1,5 +1,7 @@
 class ClientesController < ApplicationController
+
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
+  before_action :manipular_cliente?, only: [:new, :create, :edit, :show, :destroy]
 
   # GET /clientes
   # GET /clientes.json
@@ -27,14 +29,13 @@ class ClientesController < ApplicationController
     @cliente = Cliente.new(cliente_params)
     @user = User.new(user_params)
 
-
     respond_to do |format|
       if @cliente.save
         
         @user.cliente_id = @cliente.id
         @user.save!
 
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Cliente was successfully created.' }
         format.json { render :show, status: :created, location: @cliente }
       else
         format.html { render :new }

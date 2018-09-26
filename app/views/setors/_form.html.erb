@@ -1,16 +1,15 @@
 <%= form_with(model: setor, local: true) do |form| %>
-  <% if setor.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(setor.errors.count, "error") %> prohibited this setor from being saved:</h2>
+<% if setor.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(setor.errors.count, "error") %> prohibited this setor from being saved:</h2>
 
-      <ul>
-      <% setor.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <ul>
+    <% setor.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
 <br>
 
@@ -33,14 +32,48 @@
                 </div>
                 <%= form.text_field :setor, id: :setor, class: 'form-control', placeholder: 'Setor' %>
               </div></span>
-             </div>
-          <div class="footer text-center actions">
-            <%= form.submit "CADASTRAR SETOR", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
-          </div>
-        </form>
+              <span class="bmd-form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons" style="padding-top: 40px;">settings</i>
+                    </span>
+                    <div class="form-check form-check-inline">
+                      <label class="form-check-label">
+                        <%= form.check_box :manipular_funcionario, class: 'form-check-input', id: 'inlineCheckbox1', value: 'option1' %> Manipular Funcionário
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <label class="form-check-label">
+                        <%= form.check_box :manipular_cliente, class: 'form-check-input', id: 'inlineCheckbox1', value: 'option1' %> Manipular Cliente
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <label class="form-check-label">
+                        <%= form.check_box :manipular_produto, class: 'form-check-input', id: 'inlineCheckbox1', value: 'option1' %> Manipular Produto
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </span>
+
+            </div>
+            <div class="footer text-center actions" style="padding-top: 50px;">
+              <%= form.submit "CADASTRAR SETOR", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 <% end %>

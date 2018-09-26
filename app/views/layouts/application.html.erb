@@ -18,43 +18,10 @@
 </head>
 
 <body>
-	<nav class="navbar fixed-top navbar-expand-lg"  color-on-scroll="100" ">
-		<div class="container">
-			<div class="navbar-translate">
-				<a class="navbar-brand" href="/">
-					<div class="logo-big">
-						<img src="/assets/logo_loja.png" class="img-fluid">
-					</div>
-				</a>
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="navbar-toggler-icon"></span>
-					<span class="navbar-toggler-icon"></span>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-			</div>
-
-			<div class="collapse navbar-collapse">
-				<ul class="navbar-nav ml-auto">
-					<% if user_signed_in? %>
-					<li class="nav-item">
-						<%= link_to '<i class="material-icons">rotate_left</i> Sair'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link' %>
-					</li>
-					<% else %>
-						<li class="nav-item">
-						<a href="/users/sign_in" class="nav-link">
-							<i class="material-icons">person</i> Login
-						</a>
-					</li>
-					<% end %> 
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<div style="margin-top: 100px !important;">
-		
+	<%= render 'layouts/navbar' %>
+	
+	<div style="margin-top: 100px !important;">		
 		<%= yield %>	
 	</div>
 

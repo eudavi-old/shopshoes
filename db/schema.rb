@@ -87,6 +87,9 @@ ActiveRecord::Schema.define(version: 20180830201545) do
 
   create_table "setors", force: :cascade do |t|
     t.string "setor"
+    t.boolean "manipular_funcionario"
+    t.boolean "manipular_cliente"
+    t.boolean "manipular_produto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
