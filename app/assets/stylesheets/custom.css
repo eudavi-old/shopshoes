@@ -63,3 +63,33 @@ main {
     display: table;
     min-height: 700px;
 }
+
+.fh5co-bg-section {
+  background: rgba(255, 255, 255, 1);
+}
+
+#fh5co-services,
+#fh5co-started,
+#fh5co-testimonial,
+#fh5co-started,
+#fh5co-product,
+#fh5co-about,
+#fh5co-contact,
+#fh5co-footer {
+  padding: 5em 0;
+  padding-bottom: 3em;
+  clear: both;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-services,
+  #fh5co-started,
+  #fh5co-testimonial,
+  #fh5co-started,
+  #fh5co-product,
+  #fh5co-about,
+  #fh5co-contact,
+  #fh5co-footer {
+    padding: 3em 0;
+  }
+}
+
