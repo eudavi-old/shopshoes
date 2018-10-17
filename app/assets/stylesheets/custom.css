@@ -38,3 +38,28 @@ main {
 	width: auto;
 	height: 250px;
 }
+
+
+.slider-text-inner {
+    display: table-cell;
+    vertical-align: middle;
+    min-height: 700px;
+}
+
+.desc {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+}
+
+
+.desc .price {
+    font-size: 14px;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.slider-text {
+    display: table;
+    min-height: 700px;
+}
