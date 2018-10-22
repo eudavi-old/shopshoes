@@ -112,3 +112,15 @@ main {
 .margin-nav {
     margin-top: 70px;
 }
+
+#form-funcionario {
+    padding-top: 45px;
+}
+
+#form-cargo {
+    padding-top: 75px;
+}
+
+#form-setor {
+    padding-top: 45px;
+}
