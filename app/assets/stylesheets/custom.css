@@ -1,7 +1,11 @@
 body {
 	background: #171440 !important;
 	color: #98a6ad;
-	overflow-x: hidden !important;
+    overflow-x: hidden !important;
+}
+
+.background-home {
+    background: #ffffff !important;
 }
 
 main {
@@ -15,7 +19,7 @@ main {
 }
 
 .logo-big {
-    width: 200px;
+    width: 140px;
     overflow: hidden;
     margin-top: -10px;
     display: block;
@@ -103,4 +107,8 @@ main {
 
 .img-carousel-3 {
 	background: url('/assets/off-white-zoom-fly.jpg') 0% 0% / cover no-repeat;  width: 100%; height: 626px;
+}
+
+.margin-nav {
+    margin-top: 70px;
 }

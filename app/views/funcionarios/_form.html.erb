@@ -29,7 +29,7 @@
                     <i class="material-icons">person</i>
                   </span>
                 </div>
-                <%= form.text_field :login, id: :funcionario_login, class: 'form-control', placeholder: 'Login' %>
+                <%= form.text_field :login, id: :funcionario_login, autocomplete: "current-password", class: 'form-control', placeholder: 'Login' %>
               </div></span>
 
               <span class="bmd-form-group"><div class="input-group">
@@ -39,7 +39,7 @@
                   </span>
                 </div>
 
-                <%= form.password_field :password, autocomplete: "current-password" , class: 'form-control', placeholder: 'Senha...'%>
+                <%= form.password_field :password, id: :funcionario_password, autocomplete: "current-password" , class: 'form-control', placeholder: 'Senha...'%>
               </div></span>
 
 
@@ -50,7 +50,7 @@
                   </span>
                 </div>
 
-                <%= form.password_field :password_confirmation, autocomplete: "current-password" , class: 'form-control', placeholder: 'Confime sua senha...'%>
+                <%= form.password_field :password_confirmation, id: :funcionario_password_confirmation, autocomplete: "current-password" , class: 'form-control', placeholder: 'Confime sua senha...'%>
               </div></span>
 
               <span class="bmd-form-group">
@@ -60,7 +60,7 @@
                     <i class="material-icons">mail</i>
                   </span>
                 </div>
-                <%= form.text_field :email, id: :funcionario_login, class: 'form-control', placeholder: 'Email' %>
+                <%= form.text_field :email, id: :funcionario_email, class: 'form-control', placeholder: 'Email' %>
               </div></span>
 
 
@@ -152,7 +152,7 @@
                 </span>
               </div>
 
-              <%= form.text_field :pais, id: :funcionario_logradouro_num, class: 'form-control', placeholder: 'País' %>
+              <%= form.text_field :pais, id: :funcionario_pais, class: 'form-control', placeholder: 'País' %>
                   <span class="input-group-text">
                     <i class="material-icons">location_on</i>
                   </span>
