@@ -1,2 +1,0 @@
-class Agencium < ApplicationRecord
-end

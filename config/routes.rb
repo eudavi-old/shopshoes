@@ -6,10 +6,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :clientes
   resources :funcionarios
-  resources :dado_bancarios
-  resources :agencia
+  resources :agencias
   resources :bancos
-  resources :setors
+  resources :setores, :as => :setor
   resources :cargos
   
   get "/:page" => "pages#show"

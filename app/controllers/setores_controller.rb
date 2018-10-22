@@ -1,4 +1,4 @@
-class SetorsController < ApplicationController
+class SetoresController < ApplicationController
   
   before_action :set_setor, only: [:show, :edit, :update, :destroy]
 
