@@ -43,5 +43,5 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.excluded_models = ["Agencium","DadoBancario"]
+  config.excluded_models = ["Agencia","DadoBancario"]
 end

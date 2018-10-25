@@ -62,3 +62,4 @@ gem 'rails_admin_rollincode', '~> 1.0'
 gem "devise"
 
 gem 'autoprefixer-rails', '~> 6.7'
+gem "faker"
