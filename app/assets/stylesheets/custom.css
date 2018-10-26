@@ -1,7 +1,7 @@
 body {
 	background: #171440 !important;
 	color: #98a6ad;
-    overflow-x: hidden !important;
+  overflow-x: hidden !important;
 }
 
 .background-home {
@@ -65,7 +65,7 @@ main {
 
 .slider-text {
     display: table;
-    min-height: 700px;
+    min-height: 600px;
 }
 
 .fh5co-bg-section {
@@ -114,13 +114,19 @@ main {
 }
 
 #form-funcionario {
-    padding-top: 45px;
+    padding-top: 75px;
+    padding-bottom: 45px;
+    margin-top: 35px;
+    margin-bottom: 55px;
 }
 
 #form-cargo {
     padding-top: 75px;
+    padding-bottom: 35px;
+    margin-top: 45px;
 }
 
 #form-setor {
+    margin-top: 45px;
     padding-top: 45px;
 }
