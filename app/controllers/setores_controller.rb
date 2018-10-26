@@ -5,7 +5,7 @@ class SetoresController < ApplicationController
   # GET /setors
   # GET /setors.json
   def index
-    @setors = Setor.all
+    @setores = Setor.all
   end
 
   # GET /setors/1
@@ -57,7 +57,7 @@ class SetoresController < ApplicationController
   def destroy
     @setor.destroy
     respond_to do |format|
-      format.html { redirect_to setors_url, notice: 'Setor was successfully destroyed.' }
+      format.html { redirect_to setores_url, notice: 'Setor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

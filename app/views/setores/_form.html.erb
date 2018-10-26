@@ -1,4 +1,4 @@
-<%= form_with(model: setor, url: new_setor_path) do |form| %>
+<%= form_with(model: setor, local: true) do |form| %>
 <% if setor.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(setor.errors.count, "error") %> prohibited this setor from being saved:</h2>

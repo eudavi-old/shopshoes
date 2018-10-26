@@ -1,0 +1,323 @@
+pt-BR:
+  # formatos de data e hora
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+
+    day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+    abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+    order: [day, month, year]
+
+  time:
+    formats:
+      default: "%A, %d de %B de %Y, %H:%M h"
+      short: "%d/%m, %H:%M h"
+      long: "%A, %d de %B de %Y, %H:%M h"
+    am: ''
+    pm: ''
+
+  # distancia do tempo em palavras
+  datetime:
+    distance_in_words:
+      half_a_minute: 'meio minuto'
+      less_than_x_seconds:
+        one: 'menos de 1 segundo'
+        other: 'menos de %{count} segundos'
+
+      x_seconds:
+        one: '1 segundo'
+        other: '%{count} segundos'
+
+      less_than_x_minutes:
+        one: 'menos de um minuto'
+        other: 'menos de %{count} minutos'
+
+      x_minutes:
+        one: '1 minuto'
+        other: '%{count} minutos'
+
+      about_x_hours:
+        one: 'aproximadamente 1 hora'
+        other: 'aproximadamente %{count} horas'
+
+      x_days:
+        one: '1 dia'
+        other: '%{count} dias'
+
+      about_x_months:
+        one: 'aproximadamente 1 mês'
+        other: 'aproximadamente %{count} meses'
+
+      x_months:
+        one: '1 mês'
+        other: '%{count} meses'
+
+      about_x_years:
+        one: 'aproximadamente 1 ano'
+        other: 'aproximadamente %{count} anos'
+
+      over_x_years:
+        one: 'mais de 1 ano'
+        other: 'mais de %{count} anos'
+
+      almost_x_years:
+        one: 'quase 1 ano'
+        other: 'quase %{count} anos'
+
+    prompts:
+      year:   "Ano"
+      month:  "Mês"
+      day:    "Dia"
+      hour:   "Hora"
+      minute: "Minuto"
+      second: "Segundos"
+
+  # numeros
+  number:
+    format:
+      precision: 3
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: 'R$'
+        precision: 2
+        format: '%u %n'
+        separator: ','
+        delimiter: '.'
+    percentage:
+      format:
+        delimiter: '.'
+    precision:
+      format:
+        delimiter: '.'
+    human:
+      format:
+        precision: 2
+        delimiter: '.'
+        significant: true
+        strip_unsignificant_zeros: true
+      # number_to_human_size()
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      # number_to_human()
+      # new in rails 3: please add to other locales
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""     
+          thousand: "mil"
+          million:
+            one: milhão
+            other: milhões
+          billion:
+            one: bilhão
+            other: bilhões
+          trillion:
+            one: trilhão
+            other: trilhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+
+  # Usado no Array.to_sentence
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: " e "
+
+  # ActiveRecord
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "Não foi possível gravar %{model}: 1 erro"
+          other: "Não foi possível gravar %{model}: %{count} erros."
+        body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+      messages:
+        inclusion: "não está incluído na lista"
+        exclusion: "não está disponível"
+        invalid: "não é válido"
+        confirmation: "não está de acordo com a confirmação"
+        accepted: "deve ser aceito"
+        empty: "não pode ficar vazio"
+        blank: "não pode ficar em branco"
+        too_long: "é muito longo (máximo: %{count} caracteres)"
+        too_short: "é muito curto (mínimo: %{count} caracteres)"
+        wrong_length: "não possui o tamanho esperado (%{count} caracteres)"
+        taken: "já está em uso"
+        not_a_number: "não é um número"
+        not_an_integer: "não é um número inteiro"
+        greater_than: "deve ser maior do que %{count}"
+        greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+        equal_to: "deve ser igual a %{count}"
+        less_than: "deve ser menor do que %{count}"
+        less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+        odd: "deve ser ímpar"
+        even: "deve ser par"
+        record_invalid: "A validação falhou: %{errors}"
+  admin:
+    js:
+      true: Sim
+      false: Não
+      is_present: Está presente
+      is_blank: Está em branco
+      date: Data …
+      between_and_: Entre … e …
+      today: Hoje
+      yesterday: Ontem
+      this_week: Esta semana
+      last_week: Semana passada
+      number: Número …
+      contains: Contém
+      is_exactly: É exatamente
+      starts_with: Começa com
+      ends_with: Termina com
+      too_many_objects: "Muitos objetos. Use a busca acima."
+      no_objects: "Nenhum objeto encontrado"
+    loading: "Carregando …"
+    toggle_navigation: Alternar navegação
+    home:
+      name: Página inicial
+    pagination:
+      previous: "&laquo; Anterior"
+      next: Próximo &raquo;
+      truncate: …
+    misc:
+      filter_date_format: mm/dd/yy
+      search: Buscar
+      filter: Filtro
+      refresh: Atualizar
+      show_all: Mostrar todos
+      add_filter: Adicionar filtro
+      bulk_menu_title: Itens selecionados
+      remove: Remover
+      add_new: Adicionar novo
+      chosen: "%{name} escolhido"
+      chose_all: Escolher todos
+      clear_all: Limpar todos
+      up: Para cima
+      down: Para baixo
+      navigation: Navegação
+      navigation_static_label: "Links"
+      log_out: Sair
+      ago: Atrás
+      more: "Mais %{count} %{models_name}"
+    flash:
+      successful: "%{name} foi %{action} com sucesso"
+      error: "%{name} falhou ao ser %{action}"
+      noaction: Nenhuma ação foi tomada
+      model_not_found: Modelo '%{model}' não foi encontrado"
+      object_not_found: "%{model} com id '%{id}' não foi encontrado"
+    table_headers:
+      model_name: Nome do modelo
+      last_created: Última entrada
+      last_used: Último acesso
+      records: Entradas
+      username: Usuário
+      changes: Mudanças
+      created_at: Data/Hora
+      item: Item
+      message: Mensagem
+    actions:
+      dashboard:
+        title: Administração do site
+        menu: Dashboard
+        breadcrumb: Dashboard
+      index:
+        title: Lista de %{model_label_plural}
+        menu: Listar
+        breadcrumb: Lista de %{model_label_plural}
+      show:
+        title: Mostra
+        menu: Mostrar
+        breadcrumb: Mostrar "%{object_label}"
+      show_in_app:
+        menu: Mostrar no app
+      new:
+        title: Novo %{model_label}
+        menu: Adicionar novo
+        breadcrumb: Novo
+        link: Adicionar novo %{model_label}
+        done: Adicionado
+      edit:
+        title: Editar %{model_label} '%{object_label}'
+        menu: Editar
+        breadcrumb: Editar
+        link: Editar este %{model_label}
+        done: Atualizado
+      delete:
+        title: Deletar %{model_label} '%{object_label}'
+        menu: Deletar
+        breadcrumb: Deletar
+        link: Deletar '%{object_label}'
+        done: Deletado
+      bulk_delete:
+        title: Deletar %{model_label_plural}
+        menu: Deletar vários
+        breadcrumb: Deletar vários
+        bulk_link: Deletar %{model_label_plural} selecionado
+      export:
+        title: Exportar %{model_label_plural}
+        menu: Exportar
+        breadcrumb: Exportar
+        link: Exportar %{model_label_plural}
+        bulk_link: Exportar %{model_label_plural} selecionados
+        done: Exportado
+      history_index:
+        title: Histórico para %{model_label_plural}
+        menu: Histórico
+        breadcrumb: Histórico
+      history_show:
+        title: Histórico para %{model_label} '%{object_label}'
+        menu: Histórico
+        breadcrumb: Histórico
+    form:
+      cancel: Cancelar
+      basic_info: Informações básicas
+      required: Necessário
+      optional: Opcional
+      one_char: caractere
+      char_length_up_to: Comprimento até
+      char_length_of: Comprimento
+      save: Salvar
+      save_and_add_another: Salvar e adicionar outro
+      save_and_edit: Salvar e editar
+      all_of_the_following_related_items_will_be_deleted: Todos os arquivos selecionados serão excluídos
+      are_you_sure_you_want_to_delete_the_object: Você tem certeza que deseja excluir
+      confirmation: Sim, tenho certeza
+      bulk_delete: "Os seguintes objetos serão excluídos podendo também excluir objetos relacionados ou deixar relacionamentos órfãos"
+      new_model: "%{name} (novo)"
+    export:
+      confirmation: Exportar para %{name}
+      select: Selecione os campos para exportar
+      select_all_fields: Selecionar todos os campos
+      fields_from: Campos de %{name}
+      fields_from_associated: Campos associados a %{name}
+      display: 'Mostrar %{name}: %{type}'
+      options_for: Opções para %{name}
+      empty_value_for_associated_objects: "<vazio>"
+      click_to_reverse_selection: Clique para reverter a seleção
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: Converter para
+        encoding_to_help: "Escolha o formato de saída. Deixe em branco para não mudar o formato atual: (%{name})"
+        skip_header: Sem cabeçalho
+        skip_header_help: Não incluir o cabeçalho
+        default_col_sep: ","
+        col_sep: Separador de coluna
+        col_sep_help: Deixe em branco para utilizar o padrão ('%{value}') # value is default_col_sep

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :funcionarios
   resources :agencias
   resources :bancos
-  resources :setores, :as => :setor
+  resources :setores
   resources :cargos
   
   get "/:page" => "pages#show"

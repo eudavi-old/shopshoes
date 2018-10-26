@@ -30,11 +30,11 @@ class FuncionariosController < ApplicationController
     @funcionario = Funcionario.new(funcionario_params)
     @user = User.new(user_params)
 
-    if Cargo.count > 1
+    if Cargo.count >= 1
       @funcionario.cargos << Cargo.find(params[:funcionario][:cargos])
     end
-    if Setor.count > 1
-      @funcionario.setors << Setor.find(params[:funcionario][:setors])
+    if Setor.count >= 1
+      @funcionario.setores << Setor.find(params[:funcionario][:setores])
     end
 
     respond_to do |format|

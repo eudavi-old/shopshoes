@@ -5,10 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'bootsnap', require: false
-gem 'bootstrap',     '~> 4.1.1'
-gem 'material-sass', '~> 4.1.1'
-gem 'material_icons'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
@@ -53,12 +49,21 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'cocoon'
+#front
 
+gem 'cocoon'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'rails_admin_rollincode', '~> 1.0'
+gem 'bootstrap',     '~> 4.1.1'
+gem 'material-sass', '~> 4.1.1'
+gem 'material_icons'
+
+# auth
 
 gem "devise"
 
+# other
+
 gem 'autoprefixer-rails', '~> 6.7'
+gem 'bootsnap', require: false

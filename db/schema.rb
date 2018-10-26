@@ -78,14 +78,14 @@ ActiveRecord::Schema.define(version: 20180830201545) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "funcionarios_setors", force: :cascade do |t|
+  create_table "funcionarios_setores", force: :cascade do |t|
     t.bigint "setor_id"
     t.bigint "funcionario_id"
-    t.index ["funcionario_id"], name: "index_funcionarios_setors_on_funcionario_id"
-    t.index ["setor_id"], name: "index_funcionarios_setors_on_setor_id"
+    t.index ["funcionario_id"], name: "index_funcionarios_setores_on_funcionario_id"
+    t.index ["setor_id"], name: "index_funcionarios_setores_on_setor_id"
   end
 
-  create_table "setors", force: :cascade do |t|
+  create_table "setores", force: :cascade do |t|
     t.string "setor"
     t.boolean "manipular_funcionario"
     t.boolean "manipular_cliente"
