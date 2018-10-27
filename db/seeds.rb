@@ -6,6 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+admin_email = "admin@admin.com"
+admin_password = "admin123"
+
+admin = User.create!(email: admin_email, password: admin_password, 
+				password_confirmation: admin_password, admin: true)
+
+setor1 = Setor.create!(setor: Faker::Name.name, manipular_cliente: true, manipular_funcionario: false, manipular_produto: false)
+setor2 = Setor.create!(setor: Faker::Name.name, manipular_cliente: false, manipular_funcionario: true, manipular_produto: false)
+cargo1 = Cargo.create!(cargo: Faker::Name.name)
+cargo2 = Cargo.create!(cargo: Faker::Name.name)
+
 20.times do |n|
 	password = "password"
 	nome = Faker::Name.name
@@ -20,12 +31,20 @@
 	pais = Faker::Address.country
 	uf = Faker::Address.country_code
 	
-
 	funcionario = Funcionario.create!(cpf: cpf, nome: nome, 
 					salario: salario, data_nasc: data_nasc, cep: cep,
 					logradouro: logradouro, num_logradouro: num_logradouro, 
 					bairro: bairro, cidade: cidade, uf: uf,  pais: pais)
 
+
+	if n % 2 == 0
+		funcionario.setores << setor1
+		funcionario.cargos << cargo1
+	else
+		funcionario.setores << setor2
+		funcionario.cargos << cargo2
+	end
+	
 	email = Faker::Internet.email(funcionario.nome)
 
 	User.create!(funcionario_id: funcionario.id, 
