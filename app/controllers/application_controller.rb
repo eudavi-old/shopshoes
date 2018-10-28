@@ -10,20 +10,20 @@ class ApplicationController < ActionController::Base
 	end
 
 	def manipular_funcionario?
-		if user_signed_in? and current_user.funcionario != nil 
-			current_user.funcionario.setores[0].manipular_funcionario 
+		if current_user.funcionario.present? 
+			current_user.manipular_funcionario(0) 
 		end
 	end
 
 	def manipular_cliente?
-		if user_signed_in? and current_user.funcionario != nil 
-			current_user.funcionario.setores[0].manipular_cliente 
+		if current_user.funcionario.present?
+			current_user.manipular_cliente(0)
 		end
 	end
 
 	def manipular_produto?
-		if user_signed_in? and current_user.funcionario != nil
-			current_user.funcionario.setores[0].manipular_produto 
+		if current_user.funcionario.present?
+			current_user.manipular_produto(0) 
 		end
 	end
 end

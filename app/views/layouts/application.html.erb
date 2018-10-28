@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 	<link href="/assets/material/material-kit.css?v=2.0.4" rel="stylesheet" />
 	<link href="/assets/custom.css" rel="stylesheet" />
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 </head>
 
@@ -21,8 +22,6 @@
 	<div class="margin-nav">		
 		<%= yield %>	
 	</div>
-
-	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 	<script src="/assets/material-kit/core/popper.min.js" type="text/javascript"></script>
 	<script src="/assets/material-kit/core/bootstrap-material-design.min.js" type="text/javascript"></script>
