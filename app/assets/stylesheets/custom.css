@@ -1,7 +1,7 @@
 body {
 	background: #171440 !important;
 	color: #98a6ad;
-  overflow-x: hidden !important;
+  	overflow-x: hidden !important;
 }
 
 .background-home {
@@ -110,7 +110,8 @@ main {
 }
 
 .margin-nav {
-    margin-top: 70px;
+    margin-top: 40px;
+    padding-top: 0.5px;
 }
 
 #form-funcionario {
@@ -129,4 +130,28 @@ main {
 #form-setor {
     margin-top: 45px;
     padding-top: 45px;
+}
+
+.icon i {
+	font-size: 40px;
+}
+
+#margin-nav-client {
+	border: 1px !important;
+	border-radius: 15px !important;
+	margin-left: 75px;
+	margin-right: 75px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    padding-top: 0.5px;
+}
+
+#card_login {
+	width: 500px;
+	min-height: 300px;
+	margin: 0 auto;
+}
+
+#new_user {
+
 }
