@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :telefones
-  get 'telefone/telefone'
 
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -18,6 +17,13 @@ Rails.application.routes.draw do
   put "/update_cart", to: "carts#update_cart"
   
   get "/:page" => "pages#show"
-  root "pages#show", page: "home" 
+  root "pages#show", page: "home"
+
+  get "/product/new", to: "products#new", as: 'new_product'
+  post "/product/", to: "products#create", as: 'create_product'
+  get "/product/:id/edit", to: "products#edit", as: 'edit_product'
+  put "/product/:id/update", to: "products#update", as: 'update_product'
+  patch "/product/:id/update", to: "products#update"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

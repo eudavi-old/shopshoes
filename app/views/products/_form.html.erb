@@ -1,0 +1,81 @@
+<%= form_with(model: product, local: true, url: create_product_path) do |form| %>
+
+<div class="header-filter" data-parallax="true" id="margin-nav-client">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 ml-auto mr-auto">
+				<div class="card card-login">
+					<form class="form" method="" action="">
+						<div class="card-header text-center">
+							<h4 class="card-title">CADASTRO DE PRODUTO</h4>
+						</div>
+						<div class="card-body">
+							<span class="bmd-form-group">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">person</i>
+										</span>
+									</div>
+									<%= form.text_field :nome, class: 'form-control', placeholder: 'Nome do Produto' %>
+								</div>
+							</span>
+							<span class="bmd-form-group">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">accessibility</i>
+										</span>
+									</div>
+									<%= form.text_area :descricao, class: 'form-control', placeholder: 'Descrição do Produto...' %>
+								</div>
+							</span>
+							<span class="bmd-form-group">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">accessibility</i>
+										</span>
+									</div>
+									<%= form.text_area :descricao, class: 'form-control', placeholder: 'Descrição do Produto...' %>
+								</div>
+							</span>
+							<span class="bmd-form-group">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">accessibility</i>
+										</span>
+									</div>
+									<%= form.text_area :imagem, class: 'form-control', placeholder: 'Imagem do Produto...' %>
+								</div>
+							</span>
+							<span class="bmd-form-group">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">accessibility</i>
+										</span>
+									</div>
+									<%= form.number_field :quantidade, class: 'form-control', placeholder: 'Quantidade' %>
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">accessibility</i>
+										</span>
+									</div>
+									<%= form.number_field :preco, class: 'form-control' %>
+								</div>
+							</span>
+						</div>
+
+						<div class="footer text-center actions">
+							<%= form.submit "Cadastrar Produto", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<% end %>

@@ -1,0 +1,10 @@
+<% if @array_product.present? %>
+	<% @array_product.each do |item| %>
+       <div>
+       	<%= item.nome %>	
+       </div>
+       <div>
+       	<%= item.descricao %>	
+       </div>
+    <% end %>
+<% end %>
