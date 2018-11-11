@@ -132,10 +132,6 @@ main {
     padding-top: 45px;
 }
 
-.icon i {
-	font-size: 40px;
-}
-
 #margin-nav-client {
 	border: 1px !important;
 	border-radius: 15px !important;
@@ -152,6 +148,70 @@ main {
 	margin: 0 auto;
 }
 
-#new_user {
+.margin {
+  margin-top: 75px;
+}
 
+#fh5co-product {
+  padding: 3em 0;
+}
+
+.product {
+  margin-bottom: 40px;
+}
+
+.product .product-grid {
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 350px;
+    margin-bottom: 20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.product .desc .price {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.js .animate {
+  opacity: 0;
+}
+
+.product .product-grid .inner {
+    display: table;
+    height: 350px;
+    width: 100%;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.product .product-grid .inner {
+    opacity: 1;
+    background: transparent;
+}
+
+#page {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+
+.product .product-grid .inner p {
+    vertical-align: middle;
+}
+
+.icon {
+    padding: 7px 10px !important;
+    color: #fff !important;
+    background: #d1c286 !important;
+}
+
+.item {
+  box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0) !important;
 }

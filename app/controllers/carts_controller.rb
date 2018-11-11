@@ -2,6 +2,7 @@ class CartsController < ApplicationController
 	
 	def create
 		check_current_cart params[:product_id]
+		redirect_to root_path
 	end
 
 	def check_current_cart product_id
@@ -12,6 +13,7 @@ class CartsController < ApplicationController
 				session[:cart].store(product_id.to_s, 1)
 			end
 		else
+			puts ("Criando um carrinho")
 			session[:cart] = {}
 			session[:cart].store(product_id.to_s, 1)
 		end

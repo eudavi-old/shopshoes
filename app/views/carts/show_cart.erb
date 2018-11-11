@@ -1,10 +1,13 @@
 <% if @array_product.present? %>
-	<% @array_product.each do |item| %>
-       <div>
-       	<%= item.nome %>	
-       </div>
-       <div>
-       	<%= item.descricao %>	
-       </div>
-    <% end %>
+<% @array_product.each do |item| %>
+<div class="container margin">
+	<div>
+		<%= item.nome %>	
+	</div>
+	<div>
+		<%= item.descricao %>	
+	</div>
+</div>
+
+<% end %>
 <% end %>

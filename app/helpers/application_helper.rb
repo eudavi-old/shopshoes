@@ -16,4 +16,9 @@ module ApplicationHelper
 			current_user.funcionario.setores[0].manipular_produto 
 		end
 	end
+
+	def produtos_carrinho
+		return 0 unless session[:cart].present?
+		session[:cart].values.sum
+	end
 end

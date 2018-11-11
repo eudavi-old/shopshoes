@@ -4,59 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-html, body{
-	margin:0;
-	font-size: 100%;
-	background: #fff;
-}
-body a {
-	text-decoration:none;
-	transition:0.5s all;
-	-webkit-transition:0.5s all;
-	-moz-transition:0.5s all;
-	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
-}
-a:hover{
- text-decoration:none;
-}
-input[type="button"],input[type="submit"]{
-	transition:0.5s all;
-	-webkit-transition:0.5s all;
-	-moz-transition:0.5s all;
-	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
-}
-ul{
-	margin:0;
-	padding:0;
-}
-label{
-	margin:0;
-}
 /*-- header --*/
-.header {
-    background: #000;
-}
-.header ul li {
-    display: inline-block;
-    width: 24.5%;
-    text-align: center;
-    color: #fff;
-    font-size: 13px;
-    padding: 7px 0;
-    letter-spacing: 1px;
-    border-right: 1px solid #464444;
-}
-.header ul li a {
-     color: #fff;
-    text-decoration: none;
-}
-.header ul li i {
-    margin-right: 12px;
-    top: 2px;
-    color: #2fdab8;
-}
 .header-right {
     text-align: right;
 }

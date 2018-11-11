@@ -63,11 +63,11 @@ ActiveRecord::Schema.define(version: 20181109184046) do
   end
 
   create_table "funcionarios", force: :cascade do |t|
-    t.string "cpf"
+    t.integer "cpf"
     t.string "nome"
     t.float "salario"
     t.date "data_nasc"
-    t.string "cep"
+    t.integer "cep"
     t.string "logradouro"
     t.integer "num_logradouro"
     t.string "bairro"
