@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
 	def show
-		puts("Mostrando Carrinho")
-		puts(session[:cart])
+		@products = Product.last(6)
 		@product = Product.last
 		render template: "pages/#{params[:page]}", layout: false
 	end

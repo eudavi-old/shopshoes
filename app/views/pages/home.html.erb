@@ -173,39 +173,21 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <div class="card item">
-          <img class="card-img-top" src="/assets/jordan-1-black-toe.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title text-center">Sapatinho</h4>
-            <h6 class="card-subtitle mb-2 text-muted text-center">R$ 199,99 </h6>
+      <% @products.each do |product| %>
+        <div class="col-md-4">
+          <div class="card item">
+            <img class="card-img-top" src='<%= product.imagem %>' alt="Card image cap">
+            <div class="card-body">
+              <p class="text-center">
+                <%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, carts_path(product_id: product.id), method: :POST, class: 'icon' %>
+                <a href="/single/1" class="icon"><i class="fas fa-eye"></i></a>
+              </p>
+              <h4 class="card-title text-center"><%= product.nome %></h4>
+              <h6 class="card-subtitle mb-2 text-muted text-center">R$ <%= product.preco %> </h6>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card item">
-          <img class="card-img-top" src="/assets/jordan-1-black-toe.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title text-center">Sapatinho</h4>
-            <h6 class="card-subtitle mb-2 text-muted text-center">R$ 199,99 </h6>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card item">
-          <img class="card-img-top" src="/assets/jordan-1-black-toe.png" alt="Card image cap">
-          <div class="card-body">
-            <p class="text-center">
-              <%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, carts_path(product_id: @product.id), method: :POST, class: 'icon' %>
-              <a href="/single/1" class="icon"><i class="fas fa-eye"></i></a>
-            </p>
-            <h4 class="card-title text-center">Sapatinho</h4>
-            <h6 class="card-subtitle mb-2 text-muted text-center">R$ 199,99 </h6>
-          </div>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 

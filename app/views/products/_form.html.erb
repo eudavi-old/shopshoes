@@ -14,7 +14,7 @@
 								<div class="input-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text">
-											<i class="material-icons">person</i>
+											<i class="material-icons">loyalty</i>
 										</span>
 									</div>
 									<%= form.text_field :nome, class: 'form-control', placeholder: 'Nome do Produto' %>
@@ -24,7 +24,7 @@
 								<div class="input-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text">
-											<i class="material-icons">accessibility</i>
+											<i class="material-icons">note_add</i>
 										</span>
 									</div>
 									<%= form.text_area :descricao, class: 'form-control', placeholder: 'Descrição do Produto...' %>
@@ -34,36 +34,26 @@
 								<div class="input-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text">
-											<i class="material-icons">accessibility</i>
+											<i class="material-icons">add_photo_alternate</i>
 										</span>
 									</div>
-									<%= form.text_area :descricao, class: 'form-control', placeholder: 'Descrição do Produto...' %>
+									<%= form.text_field :imagem, class: 'form-control', placeholder: 'Imagem do Produto...' %>
 								</div>
 							</span>
 							<span class="bmd-form-group">
 								<div class="input-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text">
-											<i class="material-icons">accessibility</i>
-										</span>
-									</div>
-									<%= form.text_area :imagem, class: 'form-control', placeholder: 'Imagem do Produto...' %>
-								</div>
-							</span>
-							<span class="bmd-form-group">
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<span class="input-group-text">
-											<i class="material-icons">accessibility</i>
+											<i class="material-icons">looks_3</i>
 										</span>
 									</div>
 									<%= form.number_field :quantidade, class: 'form-control', placeholder: 'Quantidade' %>
 									<div class="input-group-prepend">
 										<span class="input-group-text">
-											<i class="material-icons">accessibility</i>
+											<i class="material-icons">attach_money</i>
 										</span>
 									</div>
-									<%= form.number_field :preco, class: 'form-control' %>
+									<%= form.number_field :preco, class: 'form-control', placeholder: 'Preco do Produto' %>
 								</div>
 							</span>
 						</div>
