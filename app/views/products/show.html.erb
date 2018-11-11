@@ -1,0 +1,42 @@
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="img-preview" align="center">
+			<%= image_tag @product.imagem %>
+		</div> 
+
+		<div class="row animate-box fadeInUp animated-fast">
+			<div class="col-md-12 text-center fh5co-heading">
+				<h2><%= @product.nome %></h2>
+				<p>
+					<a href="/carts/create/6" class="btn btn-primary btn-outline btn-lg">Adicionar ao Carrinho</a>
+				</p>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div class="container">
+	<div style="margin-left: 150px; margin-right: 150px; margin-top: 25px;">
+		<ul class="nav nav-pills nav-pills-rose ml-auto">
+			<li class="nav-item"><a class="nav-link active" href="#pill1" data-toggle="tab">Product Details</a></li>
+			<li class="nav-item"><a class="nav-link" href="#pill2" data-toggle="tab">Settings</a></li>
+			<li class="nav-item"><a class="nav-link" href="#pill3" data-toggle="tab">Options</a></li>
+		</ul>
+	</div>
+	<div class="tab-content tab-space" style="margin-left: 150px; margin-right: 150px;">
+		<div class="tab-pane active" id="pill1">
+			<div><h2 class="title"> <%= @product.nome %> </h2></div>
+			<p> <%= @product.descricao %> </p>
+		</div>
+		<div class="tab-pane" id="pill2">
+			Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.
+			<br><br>Dramatically maintain clicks-and-mortar solutions without functional solutions.
+		</div>
+		<div class="tab-pane" id="pill3">
+			Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
+			<br><br>Dynamically innovate resource-leveling customer service for state of the art customer service.
+		</div>
+	</div>
+
+</div>

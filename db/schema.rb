@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181109184046) do
+ActiveRecord::Schema.define(version: 20181111201336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,11 +63,11 @@ ActiveRecord::Schema.define(version: 20181109184046) do
   end
 
   create_table "funcionarios", force: :cascade do |t|
-    t.integer "cpf"
+    t.string "cpf"
     t.string "nome"
     t.float "salario"
     t.date "data_nasc"
-    t.integer "cep"
+    t.string "cep"
     t.string "logradouro"
     t.integer "num_logradouro"
     t.string "bairro"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20181109184046) do
     t.float "preco"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
   end
 
   create_table "setores", force: :cascade do |t|
