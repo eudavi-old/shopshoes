@@ -1,4 +1,3 @@
-
 <div class="row">
 	<div class="col-md-12">
 		<div class="img-preview" align="center">
@@ -9,7 +8,7 @@
 			<div class="col-md-12 text-center fh5co-heading">
 				<h2><%= @product.nome %></h2>
 				<p>
-					<a href="/carts/create/6" class="btn btn-primary btn-outline btn-lg">Adicionar ao Carrinho</a>
+					<%= link_to 'Adicionar ao Carrinho <i class="material-icons">shopping_cart</i>'.html_safe, carts_path(product_id: @product.id), method: :POST, class: 'btn btn-primary btn-outline btn-lg' %>
 				</p>
 			</div>
 		</div>
@@ -17,17 +16,27 @@
 </div>
 
 <div class="container">
-	<div style="margin-left: 150px; margin-right: 150px; margin-top: 25px;">
+	<div id="margin-nav-pills">
 		<ul class="nav nav-pills nav-pills-rose ml-auto">
 			<li class="nav-item"><a class="nav-link active" href="#pill1" data-toggle="tab">Product Details</a></li>
 			<li class="nav-item"><a class="nav-link" href="#pill2" data-toggle="tab">Settings</a></li>
 			<li class="nav-item"><a class="nav-link" href="#pill3" data-toggle="tab">Options</a></li>
 		</ul>
 	</div>
-	<div class="tab-content tab-space" style="margin-left: 150px; margin-right: 150px;">
+	<div class="tab-content tab-space" id="margin-tab">
 		<div class="tab-pane active" id="pill1">
 			<div><h2 class="title"> <%= @product.nome %> </h2></div>
 			<p> <%= @product.descricao %> </p>
+			<div class="row">
+				<div class="col-md-6">
+					<h5 class="title">KEEP IT SIMPLE</h5>
+					<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+				</div>
+				<div class="col-md-6">
+					<h5 class="title">LESS IS MORE</h5>
+					<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+				</div>
+			</div>
 		</div>
 		<div class="tab-pane" id="pill2">
 			Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.

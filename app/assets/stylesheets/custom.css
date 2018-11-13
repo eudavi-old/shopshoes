@@ -1,3 +1,105 @@
+
+@media (max-width: 1280px) {
+  h3.wthree_text_info {
+      font-size: 2.2em;
+  } 
+}
+
+h3.wthree_text_info {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #98a6ad;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+.grid figure {
+    position: relative;
+    overflow: hidden;
+    background: #000000;
+    text-align: center;
+}
+
+figure.effect-roxy img {
+    max-width: none;
+    width: calc(100% + 60px);
+    width: -o-calc(100% + 60px);
+    width: -ms-calc(100% + 60px);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
+    -webkit-transform: translate3d(-50px,0,0);
+    transform: translate3d(-50px,0,0);
+    -moz-transform: translate3d(-50px,0,0);
+    -o-transform: translate3d(-50px,0,0);
+    -ms-transform: translate3d(-50px,0,0);
+}
+.grid figure img {
+    position: relative;
+    display: block;
+    opacity: 0.8;
+}
+
+figure.effect-roxy figcaption {
+    padding: 3em;
+    text-align: right;
+    border: 13px solid rgba(255, 255, 255, 0.15);
+}
+.grid figure figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.grid figure figcaption {
+    padding: 2em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.grid figure figcaption::before, .grid figure figcaption::after {
+    pointer-events: none;
+}
+
+figure.effect-roxy h3 {
+    padding: 1.5em 0 .5em;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.grid figure h3 {
+    word-spacing: -0.15em;
+    font-weight: 300;
+}
+
+.grid figure h3 span {
+    font-weight: 800;
+    color: #070838;
+}
+
+@media (max-width: 991px) {
+.grid figure p {
+    letter-spacing: 6px;
+    font-size: 0.9em;
+}
+}
+
+.grid figure p {
+    letter-spacing: 12px;
+    color: #fff;
+    line-height: 2em;
+    font-size: 1.1em;
+}
+
+.bb-middle-agileits-w3layouts.forth.grid figure.effect-roxy h3 {
+       padding: 0em 0 .5em;
+  }
+
 body {
 	background: #ffffff !important;
 	color: #070838;
@@ -221,4 +323,12 @@ main {
     justify-content: center;
     margin-top: -25vh;
     margin-bottom: -35vh;
+}
+
+#margin-nav-pills {
+  margin-left: 150px; margin-right: 150px; margin-top: 25px;
+}
+
+#margin-tab {
+  margin-left: 150px; margin-right: 150px;
 }
