@@ -221,15 +221,15 @@ main {
 }
 
 .img-carousel-1 {
-	background: url('/assets/off-white-unc.jpg') 0% 0% / cover no-repeat;  width: 100%; height: 626px;
+	background: url('https://res.cloudinary.com/hasashisama/image/upload/v1542219965/off-white-unc.jpg') 0% 0% / cover no-repeat;  width: 100%; height: 626px;
 }
 
 .img-carousel-2 {
-	background: url('/assets/pirate-black.jpg') 0% 0% / cover no-repeat;  width: 100%; height: 626px;
+	background: url('https://res.cloudinary.com/hasashisama/image/upload/v1542219966/pirate-black.jpg') 0% 0% / cover no-repeat;  width: 100%; height: 626px;
 }
 
 .img-carousel-3 {
-	background: url('/assets/off-white-zoom-fly.jpg') 0% 0% / cover no-repeat;  width: 100%; height: 626px;
+	background: url('https://res.cloudinary.com/hasashisama/image/upload/v1542219965/off-white-zoom-fly.jpg') 0% 0% / cover no-repeat;  width: 100%; height: 626px;
 }
 
 .margin-nav {
