@@ -72,3 +72,4 @@ end
 gem 'autoprefixer-rails', '~> 6.7'
 gem 'bootsnap', require: false
 gem "faker"
+gem "figaro"
