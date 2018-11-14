@@ -63,6 +63,12 @@ gem 'material_icons'
 
 gem "devise"
 
+#other
+
+platforms :ruby do
+  gem 'unicorn'
+end
+
 gem 'autoprefixer-rails', '~> 6.7'
 gem 'bootsnap', require: false
 gem "faker"
