@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require cocoon
 //= require turbolinks
-//= require_tree ./material-kit
+//= require material-kit/core/popper.min
+//= require material-kit/core/bootstrap-material-design.min
+//= require material-kit/moment.min
+//= require material-kit/plugins/bootstrap-datetimepicker
+//= require material-kit/plugins/nouislider.min
+//= require material-kit/material-kit.min

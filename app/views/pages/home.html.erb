@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
 </head>
 <body class="background-home" id="page">
 
@@ -160,8 +162,6 @@
       <% end %>
     </div>
   </div>
-
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   <script type="text/javascript">
     $('.datetimepicker').datetimepicker({
