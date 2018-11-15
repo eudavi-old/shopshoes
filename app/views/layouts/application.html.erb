@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 	 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 </head>
 
@@ -21,19 +21,7 @@
 	<div class="margin-nav">		
 		<%= yield %>	
 	</div>
-
-	<script src="/assets/material-kit/core/popper.min.js" type="text/javascript"></script>
-	<script src="/assets/material-kit/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-	<script src="/assets/material-kit/moment.min.js"></script>
-	<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-	<script src="/assets/material-kit/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-	<script src="/assets/material-kit/plugins/nouislider.min.js" type="text/javascript"></script>
-	<!-- Place this tag in your head or just before your close body tag. -->
-	<script async defer src="https://buttons.github.io/buttons.js"></script>
-	<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
-	<script src="/assets/material-kit/material-kit.js?v=2.0.4" type="text/javascript"></script>
-
+	
 	<script type="text/javascript">
 		$('.datetimepicker').datetimepicker({
 			icons: {
