@@ -17,7 +17,7 @@
 						<h5 class="title text-center">Quantidade: <%= session[:cart][item.id.to_s] %> </h5> 
 					</div>
 					<div class="pad-button text-center">
-						<%= link_to 'Ver', show_product_path(item.slug), class: 'btn btn-info' %>
+						<%= link_to 'Ver', show_product_path(item.slug), class: 'btn cor-botoes' %>
 						<button type="button" class="btn btn-danger">Remover</button>	
 					</div>
 				</div>
@@ -26,7 +26,7 @@
 		<% end %>
 
 		<div class="margin-button">
-			<%= link_to 'Confirmar Compra', root_path, class: 'btn btn-warning' %>		
+			<%= link_to 'Confirmar Compra', root_path, class: 'btn cor-botoes' %>		
 		</div>
 	</div>
 </div>

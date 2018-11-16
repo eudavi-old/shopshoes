@@ -367,3 +367,7 @@ main {
 .pad-form {
     padding-left: 15px;
 }
+
+.cor-botoes {
+    background: #d1c286 !important;
+}
