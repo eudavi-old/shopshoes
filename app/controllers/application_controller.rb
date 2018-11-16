@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 
+	def admin?
+		current_user.present? and current_user.admin
+	end
 	def is_admin?
 		if not current_user.funcionario.present?
 			if not current_user.admin?

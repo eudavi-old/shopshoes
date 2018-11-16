@@ -1,5 +1,6 @@
-<% if @array_product.present? %>
 <div class="margin">
+<% if @array_product.present? %>
+<header><h1 class="text-center">Produtos no Carrinho</h1></header>
 	<div class="container">
 		<% @array_product.each do |item| %>
 		<div class="card">
@@ -9,20 +10,27 @@
 				</div>
 				<div class="col-md-6">
 					<p><h2><%= item.nome %></h2></p>
-					<p align="justify"><%= item.descricao %></p>
+					<p align="justify"><%= truncate(item.descricao, length: 525) %></p>
 				</div>
 				<div class="col-md-3">
 					<div>
 						<h5 class="title text-center">Quantidade: <%= session[:cart][item.id.to_s] %> </h5> 
 					</div>
-					<div class="pad-button">
-						<button type="button" class="btn btn-info">Visualizar</button>
+					<div class="pad-button text-center">
+						<%= link_to 'Ver', show_product_path(item.slug), class: 'btn btn-info' %>
 						<button type="button" class="btn btn-danger">Remover</button>	
 					</div>
 				</div>
 			</div>
 		</div>
 		<% end %>
+
+		<div class="margin-button">
+			<%= link_to 'Confirmar Compra', root_path, class: 'btn btn-warning' %>		
+		</div>
 	</div>
 </div>
+<% else %>
+	<header><h1 class="text-center">Não há produtos no Carrinho</h1></header>
 <% end %>
+</div>

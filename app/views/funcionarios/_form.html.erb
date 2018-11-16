@@ -12,13 +12,13 @@
 
 <br>
 
-<div class="header-filter" data-parallax="true" id="form-funcionario">
+<div class="bg-form-color margin-form-all" data-parallax="true" id="form-funcionario">
   <div class="container">
     <div class="row">
       <div class="col-md-8 ml-auto mr-auto">
         <div class="card card-login">
           <form class="form" method="" action="">
-            <div class="card-header card-header-primary text-center">
+            <div class="card-header text-center">
               <h4 class="card-title">CADASTRO DE FUNCIONÁRIO</h4>
             </div>
             <div class="card-body">
@@ -195,14 +195,16 @@
                 <%= render 'telefone_fields', f: telefone %>
               <% end %>
 
-              <div class="links">
+              <div class="links" style="padding-left: 15px;">
                 <%= link_to_add_association "Adicionar Telefone", form, :telefones, class: "btn" %>
               </div>
 
 
           </div>
           <div class="footer text-center actions">
-            <%= form.submit "CADASTRAR FUNCIONARIO", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
+           <div style="padding-bottom: 25px; padding-top: 25px">
+            <%= form.submit "CADASTRAR FUNCIONARIO", class: 'btn btn-wd btn-lg' %>
+            </div>
           </div>
         </form>
       </div>

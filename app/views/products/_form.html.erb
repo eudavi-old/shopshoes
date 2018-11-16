@@ -1,6 +1,6 @@
 <%= form_with(model: product, local: true, url: create_product_path) do |form| %>
 
-<div class="header-filter" data-parallax="true" id="margin-nav-client">
+<div class="bg-form-color margin-form-all" data-parallax="true" id="form-produto">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 ml-auto mr-auto">
@@ -58,8 +58,8 @@
 							</span>
 						</div>
 
-						<div class="footer text-center actions">
-							<%= form.submit "Cadastrar Produto", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
+						<div class="footer text-center actions" style="padding-bottom: 25px; padding-top: 25px">
+							<%= form.submit "Cadastrar Produto", class: 'btn btn-wd btn-lg' %>
 						</div>
 
 					</form>

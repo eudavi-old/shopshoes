@@ -39,18 +39,11 @@
         </li>
 
         <li class="nav-item">
+          <%= link_to '<i class="material-icons">store</i>Criar Produto'.html_safe, new_product_path, class: 'nav-link' %>
+          </li>
+
+        <li class="nav-item">
           <%= link_to '<i class="material-icons">dashboard</i> Dashboard'.html_safe, rails_admin_path, class: 'nav-link' %>
-        </li>
-        <% end %>
-        <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to '<i class="material-icons">rotate_left</i> Sair'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link' %>
-        </li>
-        <% else %>
-        <li class="nav-item">
-          <a href="/users/sign_in" class="nav-link">
-            <i class="material-icons">person</i> ENTRAR
-          </a>
         </li>
         <% end %>
 
@@ -63,6 +56,25 @@
         <% if manipular_cliente? %>
         <li class="nav-item">
         <%= link_to '<i class="material-icons">person</i> Cadastrar Cliente'.html_safe, new_cliente_path, class: 'nav-link' %>
+        </li>
+        <% end %>
+
+        <% if manipular_produto? %>
+          <li class="nav-item">
+          <%= link_to '<i class="material-icons">store</i> Cadastrar Produto'.html_safe, new_product_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+
+
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to '<i class="material-icons">rotate_left</i> Sair'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <a href="/users/sign_in" class="nav-link">
+            <i class="material-icons">person</i> ENTRAR
+          </a>
         </li>
         <% end %>
 

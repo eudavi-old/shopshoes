@@ -13,13 +13,13 @@
 
 <br>
 
-<div class="header-filter" id="form-cargo" data-parallax="true" >
+<div class="bg-form-color margin-form-all" id="form-cargo" data-parallax="true" >
   <div class="container">
     <div class="row">
       <div class="col-md-8 ml-auto mr-auto">
         <div class="card card-login">
           <form class="form" method="" action="">
-            <div class="card-header card-header-primary text-center">
+            <div class="card-header text-center">
               <h4 class="card-title">CADASTRO DE CARGO</h4>
             </div>
             <div class="card-body">
@@ -34,7 +34,9 @@
               </div></span>
              </div>
           <div class="footer text-center actions">
-            <%= form.submit "CADASTRAR CARGO", class: 'btn btn-primary btn-link btn-wd btn-lg' %>
+            <div style="padding-bottom: 25px; padding-top: 25px">
+              <%= form.submit "CADASTRAR CARGO", class: 'btn btn-wd btn-lg' %>  
+            </div>
           </div>
         </form>
       </div>

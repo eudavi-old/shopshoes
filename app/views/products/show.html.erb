@@ -6,7 +6,6 @@
 
 		<div class="row animate-box fadeInUp animated-fast">
 			<div class="col-md-12 text-center fh5co-heading">
-				<h2><%= @product.nome %></h2>
 				<p>
 					<%= link_to 'Adicionar ao Carrinho <i class="material-icons">shopping_cart</i>'.html_safe, carts_path(product_id: @product.id), method: :POST, class: 'btn btn-primary btn-outline btn-lg' %>
 				</p>
@@ -16,36 +15,47 @@
 </div>
 
 <div class="container">
-	<div id="margin-nav-pills">
-		<ul class="nav nav-pills nav-pills-rose ml-auto">
-			<li class="nav-item"><a class="nav-link active" href="#pill1" data-toggle="tab">Detalhes do Produto</a></li>
-			<li class="nav-item"><a class="nav-link" href="#pill2" data-toggle="tab">Informações</a></li>
-			<li class="nav-item"><a class="nav-link" href="#pill3" data-toggle="tab">Produtos Similares</a></li>
-		</ul>
-	</div>
-	<div class="tab-content tab-space" id="margin-tab">
-		<div class="tab-pane active" id="pill1">
-			<div><h2 class="title"> <%= @product.nome %> </h2></div>
-			<p> <%= @product.descricao %> </p>
-			<div class="row">
-				<div class="col-md-6">
-					<h5 class="title">KEEP IT SIMPLE</h5>
-					<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-				</div>
-				<div class="col-md-6">
-					<h5 class="title">LESS IS MORE</h5>
-					<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+	<div class="card card-nav-tabs card-plain">
+		<div class="card-header card-header-warning">
+			<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+			<div class="nav-tabs-navigation" style="padding-left: 26%;">
+				<div class="nav-tabs-wrapper"">
+					<ul class="nav nav-tabs" data-tabs="tabs">
+						<li class="nav-item">
+							<a class="nav-link active" href="#home" data-toggle="tab">Informações <i class="material-icons"> info </i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#updates" data-toggle="tab">Detalhes do Produto <i class="material-icons"> help </i> </a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#history" data-toggle="tab">Produtos Similares <i class="material-icons">more_vert </i></a>
+						</li>
+					</ul>
 				</div>
 			</div>
-		</div>
-		<div class="tab-pane" id="pill2">
-			Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.
-			<br><br>Dramatically maintain clicks-and-mortar solutions without functional solutions.
-		</div>
-		<div class="tab-pane" id="pill3">
-			Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
-			<br><br>Dynamically innovate resource-leveling customer service for state of the art customer service.
+		</div><div class="card-body" style="background: rgb(233,233,233)">
+		<div class="tab-content text-center">
+			<div class="tab-pane active" id="home">
+			<div><h2> <%= @product.nome %> </h2></div>
+				<p> <%= @product.descricao %> </p>
+				<div class="row">
+					<div class="col-md-6">
+						<h5 class="title">KEEP IT SIMPLE</h5>
+						<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+					</div>
+					<div class="col-md-6">
+						<h5 class="title">LESS IS MORE</h5>
+						<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane" id="updates">
+				<p> I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that&#x2019;s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I think that&#x2019;s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. </p>
+			</div>
+			<div class="tab-pane" id="history">
+				<p> I think that&#x2019;s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that&#x2019;s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
+			</div>
 		</div>
 	</div>
-
+</div>
 </div>

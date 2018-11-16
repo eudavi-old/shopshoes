@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
 
 	before_action :set_product, only: [:show]
+	before_action :manipula?, only: [:new, :create]
+
 
 	def new
 		@produto = Product.new
@@ -20,6 +22,13 @@ class ProductsController < ApplicationController
 	def show; end
 
 	private
+
+	def manipula?
+		if admin?
+		else
+			redirect_to root_path if not manipular_produto?
+		end
+	end
 
 	def set_product
 		@product = Product.find_by slug: params[:slug]
