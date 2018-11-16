@@ -67,9 +67,8 @@
         <% end %>
 
         <li class="button-container nav-item iframe-extern">
-                    <a href="https://www.creative-tim.com/product/material-kit-pro?ref=presentation" target="_blank" class="icon">
-                        <i class="material-icons">shopping_cart</i> <%= produtos_carrinho %>
-                    <div class="ripple-container"></div></a>
+            <%= link_to '<i class="material-icons">shopping_cart</i>'.html_safe + produtos_carrinho, show_cart_path, class: 'icon' %>
+                <div class="ripple-container"></div>
         </li>
       </ul>
     </div>

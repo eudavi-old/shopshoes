@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :cargos
   
   resources :carts, :except => [:destroy]
-  get "/show_carts", to: "carts#show_cart"
+  get "/carrinho", to: "carts#show_cart", as: 'show_cart'
   delete "/destroy_cart", to: "carts#destroy_cart"
   delete "/delete_cart", to: "carts#delete_cart"
   put "/update_cart", to: "carts#update_cart"

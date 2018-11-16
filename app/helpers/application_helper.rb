@@ -19,6 +19,6 @@ module ApplicationHelper
 
 	def produtos_carrinho
 		return 0 unless session[:cart].present?
-		session[:cart].values.sum
+		session[:cart].values.sum.to_s
 	end
 end
