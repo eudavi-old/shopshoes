@@ -1,21 +1,24 @@
 <% if @array_product.present? %>
 <div class="margin">
-	<div class="container card">
+	<div class="container">
 		<% @array_product.each do |item| %>
-		<div class="row">
-			<div class="col-md-3">
-				<img style="width: 100%;" src="<%= item.imagem %>" alt="Card image cap">
-			</div>
-			<div class="col-md-6">
-				<p><h2><%= item.nome %></h2></p>
-				<p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			</div>
-			<div class="col-md-3">
-				<div>
-					<h5 class="title">Quantidade: <%= session[:cart][item.id.to_s] %> </h5> 
+		<div class="card">
+			<div class="row">
+				<div class="col-md-3">
+					<img style="width: 100%;" src="<%= item.imagem %>" alt="Card image cap">
 				</div>
-				<div class="pad-button">
-					<button type="button" class="btn btn-danger">Remover</button>	
+				<div class="col-md-6">
+					<p><h2><%= item.nome %></h2></p>
+					<p align="justify"><%= item.descricao %></p>
+				</div>
+				<div class="col-md-3">
+					<div>
+						<h5 class="title text-center">Quantidade: <%= session[:cart][item.id.to_s] %> </h5> 
+					</div>
+					<div class="pad-button">
+						<button type="button" class="btn btn-info">Visualizar</button>
+						<button type="button" class="btn btn-danger">Remover</button>	
+					</div>
 				</div>
 			</div>
 		</div>

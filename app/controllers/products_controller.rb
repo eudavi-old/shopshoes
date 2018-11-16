@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
 		@product.slug = Product.slug(@product.nome)
 
 		if @product.save!
-			render json: {:status => "ok"}
+			redirect_to root_path
 		else
 			render json: {:status => "falhou"}
 		end
