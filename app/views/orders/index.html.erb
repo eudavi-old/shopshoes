@@ -1,0 +1,33 @@
+<div class="margin">
+	<% if @orders.present? %>
+	
+	<header><h1 class="text-center">Pedidos</h1></header>
+	<div class="container">
+		<% @orders.each do |order| %>
+		<h1> Pedido: <%= order.id %></h1>
+		<div class="card">
+			<% order.items.each do |item_detail| %>
+			<div class="row">
+				<div class="col-md-3">
+					<img style="width: 100%;" src="<%= item_detail.product.imagem %>" alt="Card image cap">
+				</div>
+				<div class="col-md-6">
+					<p><h2><%= item_detail.product.nome %></h2> </p>
+					<p style="padding-top: 35px;"><h3> Preço: R$ <%= item_detail.product.preco %> </h3> </p>
+					<p class="title"> Quantidade: <%=  item_detail.quantidade %> </p>
+				</div>
+				<div class="col-md-3">
+					<p><h3>Valor total: <strong> R$ <%= item_detail.preco_final %> </strong> </h3> </p>
+					<p><h4 class="title">Desconto: 10% </h4> </p>
+				</div>
+			</div>
+			<% end %>
+		</div>
+		<% end %>
+	</div>
+	<% else %>
+	
+	<header><h1 class="text-center">Não há produtos no Carrinho</h1></header>
+	
+	<% end %>
+</div>

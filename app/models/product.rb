@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
-	
+
+	has_many :items
+
 	def self.select_product_by_array_id id_product
 		where(id: id_product)
 	end
@@ -9,4 +11,5 @@ class Product < ApplicationRecord
 		string = string.gsub(/\s+/, "-")
 		string = I18n.transliterate(string)
 	end
+
 end

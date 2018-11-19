@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181111201336) do
+ActiveRecord::Schema.define(version: 20181119180907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,25 @@ ActiveRecord::Schema.define(version: 20181111201336) do
     t.index ["setor_id"], name: "index_funcionarios_setores_on_setor_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.integer "quantidade"
+    t.float "preco_final"
+    t.bigint "order_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_items_on_order_id"
+    t.index ["product_id"], name: "index_items_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.boolean "status"
+    t.bigint "cliente_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cliente_id"], name: "index_orders_on_cliente_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "nome"
     t.string "descricao"
@@ -130,6 +149,9 @@ ActiveRecord::Schema.define(version: 20181111201336) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "items", "orders"
+  add_foreign_key "items", "products"
+  add_foreign_key "orders", "clientes"
   add_foreign_key "telefones", "funcionarios"
   add_foreign_key "users", "clientes"
   add_foreign_key "users", "funcionarios"

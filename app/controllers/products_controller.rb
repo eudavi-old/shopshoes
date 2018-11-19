@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
 	before_action :set_product, only: [:show]
 	before_action :manipula?, only: [:new, :create]
 
-
 	def new
 		@produto = Product.new
 	end

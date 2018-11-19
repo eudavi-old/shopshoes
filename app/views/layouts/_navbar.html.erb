@@ -25,7 +25,7 @@
           </a>
         </li>
         <% end %>
-        <% if current_user != nil and current_user.is_admin? %>
+        <% if current_user.present? and current_user.is_admin? %>
         <li class="nav-item">
           <%= link_to '<i class="material-icons">person</i> Cadastrar Funcionário'.html_safe, new_funcionario_path, class: 'nav-link' %>
         </li>
@@ -67,6 +67,12 @@
 
 
         <% if user_signed_in? %>
+        <% if not current_user.admin and not current_user.funcionario.present? %>
+        <li class="nav-item">
+          <%= link_to '<i class="material-icons">shopping_basket</i> Pedidos'.html_safe, orders_path, class: 'nav-link' %>
+        </li>
+        <% end %>
+
         <li class="nav-item">
           <%= link_to '<i class="material-icons">rotate_left</i> Sair'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link' %>
         </li>
