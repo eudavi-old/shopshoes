@@ -11,8 +11,7 @@ class ClientesController < ApplicationController
 
   # GET /clientes/1
   # GET /clientes/1.json
-  def show
-  end
+  def show; end
 
   # GET /clientes/new
   def new
@@ -20,14 +19,14 @@ class ClientesController < ApplicationController
   end
 
   # GET /clientes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /clientes
   # POST /clientes.json
   def create
     @cliente = Cliente.new(cliente_params)
     @user = User.new(user_params)
+    @user.admin = false
 
     respond_to do |format|
       if @cliente.save

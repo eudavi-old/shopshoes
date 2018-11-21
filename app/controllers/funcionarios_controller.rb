@@ -29,7 +29,8 @@ class FuncionariosController < ApplicationController
   def create
     @funcionario = Funcionario.new(funcionario_params)
     @user = User.new(user_params)
-
+    @user.admin = false
+    
     if Cargo.count >= 1
       @funcionario.cargos << Cargo.find(params[:funcionario][:cargos])
     end

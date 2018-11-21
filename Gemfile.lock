@@ -277,6 +277,7 @@ DEPENDENCIES
   faker
   figaro
   jbuilder (~> 2.5)
+  kaminari
   material-sass (~> 4.1.1)
   material_icons
   pg (>= 0.18, < 2.0)

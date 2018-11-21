@@ -1,10 +1,13 @@
 <div class="margin">
 	<% if @orders.present? %>
+
+	<header>
+		<h1 class="text-center cor-produto">Meus Pedidos</h1>
+	</header>
 	
-	<header><h1 class="text-center">Pedidos</h1></header>
 	<div class="container">
-		<% @orders.each do |order| %>
-		<h1> Pedido: <%= order.id %></h1>
+		<% @orders.each_with_index do |order, indice| %>
+		<h3> <strong> Pedido: <%= indice + 1 %> </strong></h3>
 		<div class="card">
 			<% order.items.each do |item_detail| %>
 			<div class="row">
@@ -16,18 +19,26 @@
 					<p style="padding-top: 35px;"><h3> Preço: R$ <%= item_detail.product.preco %> </h3> </p>
 					<p class="title"> Quantidade: <%=  item_detail.quantidade %> </p>
 				</div>
-				<div class="col-md-3">
-					<p><h3>Valor total: <strong> R$ <%= item_detail.preco_final %> </strong> </h3> </p>
+				<div class="col-md-3 text-center">
+					<p><h3>Valor total</h3> </p>
+					<p><h3><strong> R$ <%= item_detail.preco_final %></strong></h3></p>
 					<p><h4 class="title">Desconto: 10% </h4> </p>
 				</div>
 			</div>
 			<% end %>
 		</div>
 		<% end %>
+
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<%= paginate @orders, views_prefix: 'template' %>
+			</ul>
+		</nav>
 	</div>
+
 	<% else %>
 	
-	<header><h1 class="text-center">Não há produtos no Carrinho</h1></header>
-	
-	<% end %>
-</div>
+	<header>
+		<h1 class="text-center">Você não tem pedidos</h1></header>
+		<% end %>
+	</div>

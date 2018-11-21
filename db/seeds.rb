@@ -8,14 +8,18 @@
 
 admin_email = "admin@admin.com"
 admin_password = "admin123"
+setor_1_nome = "Administrativo"
+setor_2_nome = "TI"
+cargo_1_nome = "Desenvolvedor"
+cargo_2_nome = "Analista"
 
 admin = User.create!(email: admin_email, password: admin_password, 
 				password_confirmation: admin_password, admin: true)
 
-setor1 = Setor.create!(setor: Faker::Name.name, manipular_cliente: true, manipular_funcionario: false, manipular_produto: false)
-setor2 = Setor.create!(setor: Faker::Name.name, manipular_cliente: false, manipular_funcionario: true, manipular_produto: false)
-cargo1 = Cargo.create!(cargo: Faker::Name.name)
-cargo2 = Cargo.create!(cargo: Faker::Name.name)
+setor1 = Setor.create!(setor: setor_1_nome, manipular_cliente: true, manipular_funcionario: false, manipular_produto: false)
+setor2 = Setor.create!(setor: setor_2_nome, manipular_cliente: false, manipular_funcionario: true, manipular_produto: false)
+cargo1 = Cargo.create!(cargo: cargo_1_nome)
+cargo2 = Cargo.create!(cargo: cargo_2_nome)
 
 20.times do |n|
 	password = "password"

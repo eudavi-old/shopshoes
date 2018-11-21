@@ -16,7 +16,7 @@
       </button>
     </div>
 
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <% if not user_signed_in? %>
         <li class="nav-item">
@@ -24,70 +24,67 @@
             <i class="material-icons">input</i> CADASTRE-SE (CLIENTE)
           </a>
         </li>
-        <% end %>
-        <% if current_user.present? and current_user.is_admin? %>
-        <li class="nav-item">
-          <%= link_to '<i class="material-icons">person</i> Cadastrar Funcionário'.html_safe, new_funcionario_path, class: 'nav-link' %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to '<i class="material-icons">work</i> Cadastrar Cargo'.html_safe, new_cargo_path, class: 'nav-link' %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to '<i class="material-icons">group</i> Cadastrar Setor'.html_safe, new_setor_path, class: 'nav-link' %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to '<i class="material-icons">store</i>Criar Produto'.html_safe, new_product_path, class: 'nav-link' %>
-          </li>
-
-        <li class="nav-item">
-          <%= link_to '<i class="material-icons">dashboard</i> Dashboard'.html_safe, rails_admin_path, class: 'nav-link' %>
-        </li>
-        <% end %>
-
-        <% if manipular_funcionario? %>
-        <li class="nav-item">
-          <%= link_to '<i class="material-icons">person</i> Cadastrar Funcionário'.html_safe, new_funcionario_path, class: 'nav-link' %>
-        </li>
-        <% end %>
-
-        <% if manipular_cliente? %>
-        <li class="nav-item">
-        <%= link_to '<i class="material-icons">person</i> Cadastrar Cliente'.html_safe, new_cliente_path, class: 'nav-link' %>
-        </li>
-        <% end %>
-
-        <% if manipular_produto? %>
-          <li class="nav-item">
-          <%= link_to '<i class="material-icons">store</i> Cadastrar Produto'.html_safe, new_product_path, class: 'nav-link' %>
-          </li>
-        <% end %>
-
-
-        <% if user_signed_in? %>
-        <% if not current_user.admin and not current_user.funcionario.present? %>
-        <li class="nav-item">
-          <%= link_to '<i class="material-icons">shopping_basket</i> Pedidos'.html_safe, orders_path, class: 'nav-link' %>
-        </li>
-        <% end %>
-
-        <li class="nav-item">
-          <%= link_to '<i class="material-icons">rotate_left</i> Sair'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link' %>
-        </li>
-        <% else %>
         <li class="nav-item">
           <a href="/users/sign_in" class="nav-link">
             <i class="material-icons">person</i> ENTRAR
           </a>
         </li>
-        <% end %>
 
-        <li class="button-container nav-item iframe-extern">
-            <%= link_to '<i class="material-icons pad-inside-icon">shopping_cart</i>'.html_safe + produtos_carrinho, show_cart_path, class: 'icon' %>
-                <div class="ripple-container"></div>
+        <li class="nav-item">
+            <%= link_to '<i class="material-icons pad-inside-icon">shopping_cart</i>'.html_safe + produtos_carrinho, show_cart_path, class: 'nav-link icon' %>
         </li>
+
+        <% elsif current_user.cliente_id.present? %>
+          
+        <li class="nav-item">
+            <%= link_to '<i class="material-icons pad-inside-icon">shopping_cart</i>'.html_safe + produtos_carrinho, show_cart_path, class: 'nav-link icon' %>
+        </li>
+
+          <li class="nav-item">
+              <%= link_to '<i class="material-icons">shopping_basket</i> Pedidos'.html_safe, orders_path, class: 'nav-link' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to '<i class="material-icons">rotate_left</i> Sair'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Cadastros
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <% if current_user.is_admin? %>        
+                  <%= link_to '<i class="material-icons">person</i> Cadastrar Funcionário'.html_safe, new_funcionario_path, class: 'dropdown-item' %>    
+                  <%= link_to '<i class="material-icons">work</i> Cadastrar Cargo'.html_safe, new_cargo_path, class: 'dropdown-item' %>
+                  <%= link_to '<i class="material-icons">group</i> Cadastrar Setor'.html_safe, new_setor_path, class: 'dropdown-item' %>
+                  <%= link_to '<i class="material-icons">store</i>Cadastrar Produto'.html_safe, new_product_path, class: 'dropdown-item' %>        
+              <% end %>
+
+              <% if manipular_funcionario? %>
+                <%= link_to '<i class="material-icons">person</i> Cadastrar Funcionário'.html_safe, new_funcionario_path, class: 'dropdown-item' %>
+              <% end %>
+
+              <% if manipular_cliente? %>
+                  <%= link_to '<i class="material-icons">person</i> Cadastrar Cliente'.html_safe, new_cliente_path, class: 'dropdown-item' %>
+              <% end %>
+
+              <% if manipular_produto? %>
+                  <%= link_to '<i class="material-icons">store</i> Cadastrar Produto'.html_safe, new_product_path, class: 'dropdown-item' %>
+              <% end %>
+              </div>
+          </li>
+
+          <% if current_user.is_admin? %> 
+          <li class="nav-item">
+              <%= link_to '<i class="material-icons">dashboard</i> Dashboard'.html_safe, rails_admin_path, class: 'nav-link' %>
+          </li>
+          <% end %>
+
+          <li class="nav-item">
+            <%= link_to '<i class="material-icons">rotate_left</i> Sair'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

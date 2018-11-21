@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		@orders = current_user.cliente.orders
+		@orders = current_user.cliente.orders.page params[:page]
 	end
 
 	def show; end
