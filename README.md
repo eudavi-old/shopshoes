@@ -1,7 +1,7 @@
 # Shopshoes
 
 
-Shoes store developed for Analisys and Implementation of Systems II
+Shoes store developed for Systems Analysis, Projects and Development II
 
 ### Clone the repository
 
