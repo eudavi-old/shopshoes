@@ -25,7 +25,8 @@ Rails.application.routes.draw do
 
   get '/confirmar_carrinho', to: "items#create", as: 'create_order'
   get "/pedidos", to: "orders#index", as: 'orders'
-
+  get "/contas_receber", to: "orders#receive_bills", as: 'receive_bills'
+  get "/contas_pagar", to: "orders#pay_bills", as: 'pay_bills'
   
   get "/:page" => "pages#show"
   root "pages#show", page: "home"

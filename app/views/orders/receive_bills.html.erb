@@ -1,0 +1,22 @@
+
+
+<div class="container margin">
+	<h1 class="title text-center">Contas a Receber</h1>
+	<div class="card" style="padding-top: 25px; padding-bottom: 25px;">
+		<table>
+		<tr>
+			<th class="text-center"><h4 class="title"> Nome do Cliente </h4></th>
+			<th class="text-center"><h4 class="title"> Valor </h4></th>
+			<th class="text-center"><h4 class="title"> Data do pedido </h4></th>
+		</tr>
+		<% @orders.each do |order| %>
+		<tr>
+			<td class="text-center"><%= order.cliente.nome %></td>
+			<td class="text-center">R$ <%= preco_final order %></td> 
+			<td class="text-center"><%= post_date order.created_at %></td>
+		</tr>
+		<% end %>
+	</table>
+	</div>
+	
+</div>

@@ -58,7 +58,8 @@
                   <%= link_to '<i class="material-icons">person</i> Cadastrar Funcionário'.html_safe, new_funcionario_path, class: 'dropdown-item' %>    
                   <%= link_to '<i class="material-icons">work</i> Cadastrar Cargo'.html_safe, new_cargo_path, class: 'dropdown-item' %>
                   <%= link_to '<i class="material-icons">group</i> Cadastrar Setor'.html_safe, new_setor_path, class: 'dropdown-item' %>
-                  <%= link_to '<i class="material-icons">store</i>Cadastrar Produto'.html_safe, new_product_path, class: 'dropdown-item' %>        
+                  <%= link_to '<i class="material-icons">store</i> Cadastrar Produto'.html_safe, new_product_path, class: 'dropdown-item' %>
+                  <%= link_to '<i class="material-icons">airport_shuttle</i> Cadastrar Fornecedor'.html_safe, new_product_path, class: 'dropdown-item' %>          
               <% end %>
 
               <% if manipular_funcionario? %>
@@ -76,8 +77,22 @@
           </li>
 
           <% if current_user.is_admin? %> 
+           <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Contas
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to '<i class="material-icons">attach_money</i> Contas Receber'.html_safe, receive_bills_path, class: 'dropdown-item' %>
+              <%= link_to '<i class="material-icons">money_off</i> Contas Pagar'.html_safe, pay_bills_path, class: 'dropdown-item' %>
+            </div>
+           </li>
+
+           <li class="nav-item">
+              <%= link_to '<i class="material-icons">bar_chart</i> Dashboard'.html_safe, rails_admin_path, class: 'nav-link' %>
+          </li>
+
           <li class="nav-item">
-              <%= link_to '<i class="material-icons">dashboard</i> Dashboard'.html_safe, rails_admin_path, class: 'nav-link' %>
+              <%= link_to '<i class="material-icons">store</i> Estoque'.html_safe, rails_admin_path, class: 'nav-link' %>
           </li>
           <% end %>
 

@@ -74,3 +74,4 @@ gem 'bootsnap', require: false
 gem "faker"
 gem "figaro"
 gem "kaminari"
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'

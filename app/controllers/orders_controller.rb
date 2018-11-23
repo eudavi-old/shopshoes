@@ -6,6 +6,11 @@ class OrdersController < ApplicationController
 		@orders = current_user.cliente.orders.page params[:page]
 	end
 
-	def show; end
+	def receive_bills
+		@orders = Order.this_month
+	end
 
+	def pay_bills; end
+
+	def show; end
 end
