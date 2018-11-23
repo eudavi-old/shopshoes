@@ -212,7 +212,7 @@ main {
 }
 
 .margin-nav {
-    margin-top: 40px;
+    margin-top: 38px;
     padding-top: 0.5px;
 }
 
@@ -374,4 +374,9 @@ main {
 
 .cor-produto {
     color: #d1c286;
+}
+
+#pad-btn-login {
+    padding-bottom: 25px; 
+    padding-top: 25px;
 }

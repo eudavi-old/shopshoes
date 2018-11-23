@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
 
+	belongs_to :provider
 	has_many :items
 
 	def self.select_product_by_array_id id_product
