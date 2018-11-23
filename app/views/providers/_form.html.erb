@@ -1,0 +1,129 @@
+<%= form_with(model: fornecedor, local: true, url: 'new_provider') do |form| %>
+
+<div class="bg-form-color margin-form-all" data-parallax="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="card card-login">
+          <form class="form" method="" action="">
+            <div class="card-header text-center">
+              <h4 class="card-title">CADASTRO DE FORNECEDOR</h4>
+            </div>
+            <div class="card-body">
+             <span class="bmd-form-group">
+               <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">contacts</i>
+                  </span>
+                </div>
+                <%= form.text_field :cpf, id: :fornecedor_cpf, class: 'form-control', placeholder: 'CPF' %>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">how_to_reg</i>
+                  </span>
+                </div>
+                <%= form.text_field :cpnj, id: :fornecedor_nome, class: 'form-control', placeholder: 'CPNJ' %>
+              </div></span>
+
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">accessibility</i>
+                  </span>
+                </div>
+                <%= form.text_field :nome, id: :fornecedor_nome, class: 'form-control', placeholder: 'Nome do fornecedor' %>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">mail</i>
+                  </span>
+                </div>
+
+                <%= form.text_field :email , class: 'form-control', placeholder: 'Email'%>
+              </div></span>
+
+              <span class="bmd-form-group"><div class="input-group">
+
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">navigation</i>
+                  </span>
+                </div>
+                <%= form.text_field :logradouro, id: :fornecedor_logradouro, class: 'form-control', placeholder: 'Logradouro' %>
+
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">filter_9</i>
+                  </span>
+                </div>
+
+                <%= form.text_field :num_logradouro, id: :fornecedor_logradouro_num, class: 'form-control', placeholder: 'Número Logradouro' %>
+                
+                
+              </div></span>
+
+
+              <span class="bmd-form-group"><div class="input-group">
+
+               <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">location_city</i>
+                </span>
+              </div>
+
+              <%= form.text_field :cidade, id: :fornecedor_cidade, class: 'form-control', placeholder: 'Cidade' %>
+
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">home</i>
+                </span>
+              </div>
+              
+              <%= form.text_field :bairro, id: :fornecedor_bairro, class: 'form-control', placeholder: 'Bairro' %>
+              
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="material-icons">my_location</i>
+                </span>
+              </div>
+              <%= form.text_field :cep, id: :fornecedor_cep, class: 'form-control', placeholder: 'CEP' %>
+
+            </div></span>
+
+            <span class="bmd-form-group"><div class="input-group">
+
+              <div class="input-group-prepend">
+
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">public</i>
+                  </span>
+                </div>
+
+                <%= form.text_field :pais, id: :fornecedor_pais, class: 'form-control', placeholder: 'País' %>
+                
+                <span class="input-group-text">
+                  <i class="material-icons">location_on</i>
+                </span>
+              </div>
+              <%= form.text_field :uf, id: :pais, class: 'form-control', placeholder: 'Estado' %>
+            </div></span>            
+          </div>
+          <div class="footer text-center actions" style="padding-bottom: 25px; padding-top: 25px">
+            <%= form.submit "CADASTRAR FORNECEDOR", class: 'btn btn-lg' %>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<% end %>

@@ -233,7 +233,7 @@ main {
 }
 
 .margin-nav {
-    margin-top: 40px;
+    margin-top: 38px;
     padding-top: 0.5px;
 }
 
@@ -389,6 +389,19 @@ main {
 
 .pad-form {
     padding-left: 15px;
+}
+
+.cor-botoes {
+    background: #d1c286 !important;
+}
+
+.cor-produto {
+    color: #d1c286;
+}
+
+#pad-btn-login {
+    padding-bottom: 25px; 
+    padding-top: 25px;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

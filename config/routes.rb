@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   delete "/delete_cart", to: "carts#delete_cart"
   put "/update_cart", to: "carts#update_cart"
 
+  # Produto
+
   get "/product/new", to: "products#new", as: 'new_product'
   post "/product/", to: "products#create", as: 'create_product'
   get "/product/:slug", to: "products#show", as: 'show_product'
@@ -23,11 +25,20 @@ Rails.application.routes.draw do
   put "/product/:id/update", to: "products#update", as: 'update_product'
   patch "/product/:id/update", to: "products#update"
 
+  # Carrinho
+
   get '/confirmar_carrinho', to: "items#create", as: 'create_order'
   get "/pedidos", to: "orders#index", as: 'orders'
+  
+  # Contas
+
   get "/contas_receber", to: "orders#receive_bills", as: 'receive_bills'
   get "/contas_pagar", to: "orders#pay_bills", as: 'pay_bills'
   
+  # Fornecedor
+
+  get '/fornecedor/new', to: "providers#new", as: 'new_provider'
+
   get "/:page" => "pages#show"
   root "pages#show", page: "home"
 
