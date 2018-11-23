@@ -1,0 +1,25 @@
+<div class="container margin">
+	<h1 class="title text-center">Estoque</h1>
+	<% @products.each do |produto| %>
+		<div class="card">
+			<div class="row">
+				<div class="col-md-3">
+					<img style="width: 100%;" src="<%= produto.imagem %>" alt="Card image cap">
+				</div>
+				<div class="col-md-6">
+					<p><h2><%= produto.nome %></h2> </p>
+					<p><h4>Preço: <strong> R$ <%= produto.preco %> </strong></h4></p>
+				</div>
+				<div class="col-md-3">
+					<div>
+						<h5 class="title text-center">Quantidade: <%= produto.quantidade %> </h5> 
+					</div>
+					<div class="pad-button text-center">
+						<%= link_to 'Ver', show_product_path(produto.slug), class: 'btn cor-botoes' %>
+						<button type="button" class="btn btn-danger">Remover</button>	
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

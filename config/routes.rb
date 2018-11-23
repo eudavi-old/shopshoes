@@ -39,6 +39,10 @@ Rails.application.routes.draw do
 
   get '/fornecedor/new', to: "providers#new", as: 'new_provider'
 
+  # Estoque
+
+  get '/estoque', to: "storage#index", as: 'storage'
+
   get "/:page" => "pages#show"
   root "pages#show", page: "home"
 
