@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :clientes
   resources :funcionarios
-  resources :agencias
   resources :bancos
   resources :setores
   resources :cargos

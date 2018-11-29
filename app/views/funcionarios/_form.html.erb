@@ -189,8 +189,6 @@
                 </div> <%= form.collection_select(:setores, Setor.order(:id), :id, :setor, {include_blank: false}, {:class => 'form-control selectpicker'}) %>
               </div></span>
               
-              
-
               <%= form.fields_for :telefones do |telefone| %>
                 <%= render 'telefone_fields', f: telefone %>
               <% end %>
@@ -198,8 +196,6 @@
               <div class="links" style="padding-left: 15px;">
                 <%= link_to_add_association "Adicionar Telefone", form, :telefones, class: "btn" %>
               </div>
-
-
           </div>
           <div class="footer text-center actions">
            <div style="padding-bottom: 25px; padding-top: 25px">

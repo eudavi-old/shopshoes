@@ -1,2 +1,0 @@
-class Agencia < ApplicationRecord
-end

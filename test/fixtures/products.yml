@@ -1,13 +1,14 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+ultramarine:
+  nome: Ultramarine
+  descricao: Lorem Ipsum
+  imagem: none
+  quantidade: 15
+  preco: 200
+  slug: ultramarine
 
-one:
-  descricao: MyString
-  imagem: MyString
-  quantidade: 1
-  preco: 1.5
-
-two:
-  descricao: MyString
-  imagem: MyString
-  quantidade: 1
-  preco: 1.5
+react_sail:
+  descricao: Lorem Ipsum
+  imagem: none
+  quantidade: 10
+  preco: 250
+  slug: react-sail
