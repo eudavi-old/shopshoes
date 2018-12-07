@@ -1,6 +1,6 @@
 # Shopshoes
 
-E-Commerce developed to Systems Analysis, Projects and Development with RoR.
+E-Commerce developed for Systems Analysis, Projects and Development with RoR.
 
 ### Clone the repository
 
