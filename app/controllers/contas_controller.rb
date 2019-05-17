@@ -1,2 +1,0 @@
-class ContasController < ApplicationController
-end

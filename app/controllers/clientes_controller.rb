@@ -1,19 +1,14 @@
 class ClientesController < ApplicationController
-
-  before_action :set_cliente, only: [:show, :edit, :update, :destroy]
+  before_action :set_cliente, only: [:update, :destroy]
   before_action :manipular_cliente?, only: [:new, :create, :edit, :show, :destroy]
 
   def index
     @clientes = Cliente.all
   end
 
-  def show; end
-
   def new
     @cliente = Cliente.new
   end
-
-  def edit; end
 
   def create
     @cliente = Cliente.new(cliente_params)

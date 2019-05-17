@@ -4,9 +4,10 @@ class ApplicationController < ActionController::Base
 	def admin?
 		current_user.present? and current_user.admin
 	end
+
 	def is_admin?
-		if not current_user.funcionario.present?
-			if not current_user.admin?
+		unless current_user.funcionario.present?
+			unless current_user.admin?
 				redirect_to root_path
 			end
 		end

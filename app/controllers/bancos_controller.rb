@@ -1,11 +1,9 @@
 class BancosController < ApplicationController
-  before_action :set_banco, only: [:edit, :update, :destroy]
+  before_action :set_banco, only: [:update, :destroy]
 
   def new
     @banco = Banco.new
   end
-
-  def edit; end
 
   def create
     @banco = Banco.new(banco_params)

@@ -1,11 +1,9 @@
 class CargosController < ApplicationController
-  before_action :set_cargo, only: [:edit, :update, :destroy]
+  before_action :set_cargo, only: [:update, :destroy]
 
   def new
     @cargo = Cargo.new
   end
-
-  def edit; end
 
   def create
     @cargo = Cargo.new(cargo_params)
