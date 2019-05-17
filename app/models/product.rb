@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-
 	has_many :items
 
 	validates_presence_of :nome, :preco, :imagem
@@ -13,5 +12,4 @@ class Product < ApplicationRecord
 		string = string.gsub(/\s+/, "-")
 		string = I18n.transliterate(string)
 	end
-
 end

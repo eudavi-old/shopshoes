@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  
   belongs_to :cliente, optional: true
   belongs_to :funcionario, optional: true
   devise :database_authenticatable, :registerable,
