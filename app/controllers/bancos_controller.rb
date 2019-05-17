@@ -1,11 +1,5 @@
 class BancosController < ApplicationController
-  before_action :set_banco, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @bancos = Banco.all
-  end
-
-  def show; end
+  before_action :set_banco, only: [:edit, :update, :destroy]
 
   def new
     @banco = Banco.new
