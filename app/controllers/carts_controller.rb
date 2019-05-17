@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-	
 	def create
 		check_current_cart params[:product_id]
 		redirect_to root_path

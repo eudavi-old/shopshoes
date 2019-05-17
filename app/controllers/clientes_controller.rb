@@ -1,36 +1,37 @@
 class ClientesController < ApplicationController
-  before_action :set_cliente, only: [:destroy]
-  before_action :manipular_cliente?, only: [:new, :create, :edit, :show, :destroy]
+    before_action :set_cliente, only: [:destroy]
+    before_action :manipular_cliente?, only: [:new, :create, :edit, :show, :destroy]
 
-  def index
-    @clientes = Cliente.all
-  end
-
-  def new
-    @cliente = Cliente.new
-  end
-
-  def create
-    @cliente = Cliente.new(cliente_params)
-    @user = User.new(user_params)
-    @user.admin = false
-
-    if @cliente.save
-      @user.cliente_id = @cliente.id
-      @user.save!
-
-      redirect_to root_path, notice: 'Cliente was successfully created.'
-    else
-      render :new
+    def index
+      @clientes = Cliente.all
     end
-  end
 
-  def destroy
-    @cliente.destroy
-    redirect_to clientes_url, notice: 'Cliente was successfully destroyed.'
-  end
+    def new
+      @cliente = Cliente.new
+    end
 
-  private
+    def create
+      @cliente = Cliente.new(cliente_params)
+      @user = User.new(user_params)
+      @user.admin = false
+
+      if @cliente.save
+        @user.cliente_id = @cliente.id
+        @user.save!
+
+        redirect_to root_path, notice: 'Cliente was successfully created.'
+      else
+        render :new
+      end
+    end
+
+    def destroy
+      @cliente.destroy
+      redirect_to clientes_url, notice: 'Cliente was successfully destroyed.'
+    end
+
+    private
+    
     def set_cliente
       @cliente = Cliente.find(params[:id])
     end

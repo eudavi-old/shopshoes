@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
 	before_action :authenticate_user!
 
 	def create
@@ -20,7 +19,7 @@ class ItemsController < ApplicationController
 		redirect_to root_path
 	end
 
-  def destroy_session_cart
-    session.delete(:cart)
-  end
+	def destroy_session_cart
+		session.delete(:cart)
+	end
 end

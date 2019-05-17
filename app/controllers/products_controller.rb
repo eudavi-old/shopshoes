@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-
 	before_action :set_product, only: [:show]
 	before_action :manipula?, only: [:new, :create]
 
@@ -23,8 +22,7 @@ class ProductsController < ApplicationController
 	private
 
 	def manipula?
-		if admin?
-		else
+		unless admin?
 			redirect_to root_path if not manipular_produto?
 		end
 	end
