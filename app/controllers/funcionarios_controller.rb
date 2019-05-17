@@ -1,5 +1,4 @@
 class FuncionariosController < ApplicationController
-  
   before_action :authenticate_user!
   before_action :manipular_funcionario?, only: [:new, :create, :edit, :show, :destroy]
   before_action :is_admin?, only: [:new, :create, :edit, :update, :destroy]
@@ -8,13 +7,9 @@ class FuncionariosController < ApplicationController
     @funcionarios = Funcionario.all
   end
 
-  def show; end
-
   def new
     @funcionario = Funcionario.new
   end
-
-  def edit; end
 
   def create
     @funcionario = Funcionario.new(funcionario_params)
@@ -48,12 +43,10 @@ class FuncionariosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_funcionario
       @funcionario = Funcionario.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def funcionario_params
       params.require(:funcionario).permit(:cpf, :nome, :salario, :data_nasc, :cep, 
         :logradouro, :num_logradouro, :bairro, :cidade, :uf, :pais, telefones_attributes: [:telefone])
