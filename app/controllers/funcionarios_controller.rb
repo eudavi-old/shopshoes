@@ -29,14 +29,6 @@ class FuncionariosController < ApplicationController
     end
   end
 
-  def update
-      if @funcionario.update(funcionario_params)
-        redirect_to @funcionario, notice: 'Funcionario was successfully updated.'
-      else
-        render :edit
-      end
-  end
-
   def destroy
     @funcionario.destroy
     redirect_to funcionarios_url, notice: 'Funcionario was successfully destroyed.'

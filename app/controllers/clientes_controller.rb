@@ -1,5 +1,5 @@
 class ClientesController < ApplicationController
-  before_action :set_cliente, only: [:update, :destroy]
+  before_action :set_cliente, only: [:destroy]
   before_action :manipular_cliente?, only: [:new, :create, :edit, :show, :destroy]
 
   def index
@@ -22,14 +22,6 @@ class ClientesController < ApplicationController
       redirect_to root_path, notice: 'Cliente was successfully created.'
     else
       render :new
-    end
-  end
-
-  def update
-    if @cliente.update(cliente_params)
-      redirect_to @cliente, notice: 'Cliente was successfully updated.'
-    else
-      render :edit
     end
   end
 
