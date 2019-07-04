@@ -9,7 +9,7 @@ class CargosController < ApplicationController
       @cargo = Cargo.new(cargo_params)
 
       if @cargo.save
-        edirect_to rails_admin_path, notice: 'Cargo was successfully created.'
+        redirect_to rails_admin_path, notice: 'Cargo was successfully created.'
       else
         render :new
       end
