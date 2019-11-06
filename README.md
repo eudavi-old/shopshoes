@@ -1,7 +1,5 @@
 # Shopshoes
 
-E-Commerce developed for Systems Analysis, Projects and Development with RoR.
-
 ### Clone the repository
 
 ```shell
